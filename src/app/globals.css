@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FCFCFD;
+  --foreground: #1A1C1E;
+  --primary: #0F172A;
+  --secondary: #475569;
+  --accent: #2C5282; /* Professional Medical Blue */
+  --muted: #F1F5F9;
+  --card: #FFFFFF;
+  --border: #E2E8F0;
+  --font-serif: var(--font-serif);
+  --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020617;
+    --foreground: #F8FAFC;
+    --primary: #F8FAFC;
+    --secondary: #94A3B8;
+    --accent: #818CF8;
+    --lavender: #1E1B4B;
+    --card: #0F172A;
+    --border: #1E293B;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: var(--noise);
+  }
+
+  .mesh-gradient {
+    background-color: var(--background);
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(210, 100%, 80%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(260, 100%, 80%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(210, 100%, 80%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, hsla(210, 100%, 90%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(210, 100%, 80%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(260, 100%, 80%, 0.1) 0px, transparent 50%);
+  }
+
+  .dark .mesh-gradient {
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(210, 100%, 20%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(260, 100%, 20%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(210, 100%, 20%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, hsla(210, 100%, 10%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(210, 100%, 20%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(260, 100%, 20%, 0.2) 0px, transparent 50%);
+  }
+}
