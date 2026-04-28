@@ -44,7 +44,7 @@ const Hero = () => {
               className="text-5xl lg:text-7xl font-serif text-primary leading-[1.1] mb-10 tracking-tight"
             >
               <span className="whitespace-nowrap">Excellence in</span> <br />
-              <span className="italic text-accent drop-shadow-sm">Neurological Care</span>
+              <span className="italic text-gradient drop-shadow-sm font-bold">Neurological Care</span>
             </motion.h1>
 
             <motion.div

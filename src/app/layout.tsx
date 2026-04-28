@@ -26,6 +26,9 @@ export const metadata: Metadata = {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingBlobs from "@/components/FloatingBlobs";
+import CustomCursor from "@/components/CustomCursor";
+import ProgressBar from "@/components/ProgressBar";
+import FloatingWidgets from "@/components/FloatingWidgets";
 
 export default function RootLayout({
   children,
@@ -35,12 +38,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable} ${ebGaramond.variable} scroll-smooth`}>
       <body className="font-outfit antialiased selection:bg-accent/20 bg-background text-foreground relative min-h-screen mesh-gradient">
+        <CustomCursor />
+        <ProgressBar />
         <FloatingBlobs />
         <Navbar />
         {children}
+        <FloatingWidgets />
         <Footer />
       </body>
     </html>
   );
 }
-

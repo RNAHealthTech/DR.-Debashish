@@ -60,7 +60,11 @@ body {
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-400;
+  }
+
+  .dark .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-blue-300 to-sky-200;
   }
 
   .noise-overlay {
@@ -68,28 +72,29 @@ body {
     inset: 0;
     z-index: 9999;
     pointer-events: none;
-    opacity: 0.03;
+    opacity: 0.04;
     background-image: var(--noise);
   }
 
   .mesh-gradient {
-    background-color: var(--background);
+    background-color: #f8fafc;
     background-image: 
-      radial-gradient(at 0% 0%, hsla(210, 100%, 80%, 0.15) 0px, transparent 50%),
-      radial-gradient(at 50% 0%, hsla(260, 100%, 80%, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(210, 100%, 80%, 0.15) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, hsla(210, 100%, 90%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(210, 100%, 80%, 0.1) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(260, 100%, 80%, 0.1) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, hsla(210, 100%, 85%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(260, 100%, 85%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(190, 100%, 85%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, hsla(220, 100%, 92%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(230, 100%, 88%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(260, 100%, 85%, 0.3) 0px, transparent 50%);
   }
 
   .dark .mesh-gradient {
+    background-color: #020617;
     background-image: 
-      radial-gradient(at 0% 0%, hsla(210, 100%, 20%, 0.3) 0px, transparent 50%),
-      radial-gradient(at 50% 0%, hsla(260, 100%, 20%, 0.2) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(210, 100%, 20%, 0.3) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, hsla(210, 100%, 10%, 0.2) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(210, 100%, 20%, 0.2) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(260, 100%, 20%, 0.2) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, hsla(210, 100%, 25%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(260, 100%, 25%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(190, 100%, 25%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, hsla(220, 100%, 15%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(230, 100%, 20%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(260, 100%, 25%, 0.3) 0px, transparent 50%);
   }
 }

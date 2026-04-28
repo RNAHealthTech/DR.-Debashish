@@ -34,7 +34,7 @@ const About = () => {
                 <span>Biography & Leadership</span>
               </div>
               <h2 className="text-5xl lg:text-7xl font-serif mb-10 leading-[0.95] text-primary tracking-tighter">
-                A Distinguished <span className="text-accent italic">Legacy</span> in Global Neurology
+                A Distinguished <span className="text-gradient italic font-bold">Legacy</span> in Global Neurology
               </h2>
               <div className="space-y-8 text-secondary text-xl leading-relaxed font-medium">
                 <p>
