@@ -23,16 +23,17 @@ const Hero = () => {
                 }
               }
             }}
+            className="z-10"
           >
             <motion.div
               variants={{
                 hidden: { opacity: 0, x: -20 },
                 visible: { opacity: 1, x: 0 }
               }}
-              className="inline-flex items-center space-x-3 bg-white/40 backdrop-blur-md px-4 py-2 rounded-full mb-8 border border-accent/10 shadow-sm"
+              className="inline-flex items-center space-x-3 bg-white/60 backdrop-blur-md px-5 py-2.5 rounded-full mb-10 border border-primary/10 shadow-sm"
             >
-              <Award size={14} className="text-accent" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-accent">Director & HOD – Neurology</span>
+              <Award size={14} className="text-primary" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Director & HOD – Neurology</span>
             </motion.div>
 
             <motion.h1
@@ -40,10 +41,10 @@ const Hero = () => {
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 }
               }}
-              className="text-5xl lg:text-7xl font-serif text-primary leading-[1.1] mb-8 tracking-tight"
+              className="text-5xl lg:text-7xl font-serif text-primary leading-[1.1] mb-10 tracking-tight"
             >
-              Excellence in <br />
-              <span className="italic text-accent">Neurological Care</span>
+              <span className="whitespace-nowrap">Excellence in</span> <br />
+              <span className="italic text-accent drop-shadow-sm">Neurological Care</span>
             </motion.h1>
 
             <motion.div
@@ -53,12 +54,14 @@ const Hero = () => {
               }}
               className="space-y-6 mb-12"
             >
-              <h2 className="text-2xl font-bold text-primary/80">Dr. (Prof.) Debashish Chowdhury</h2>
-              <p className="text-sm font-bold uppercase tracking-tighter text-secondary/60">MBBS, MD (Medicine), DM (Neurology), FIAN, FANA, FRCP (London)</p>
-              <p className="text-lg text-secondary max-w-xl leading-relaxed">
+              <h2 className="text-3xl font-bold text-primary tracking-tight">Dr. (Prof.) Debashish Chowdhury</h2>
+              <div className="h-1 w-20 bg-accent/20 rounded-full"></div>
+              <p className="text-xs font-bold uppercase tracking-[0.1em] text-primary/80 leading-relaxed max-w-md">
+                MBBS, MD (Medicine), DM (Neurology), FIAN, FANA, FRCP (London)
+              </p>
+              <p className="text-xl text-secondary max-w-xl leading-relaxed font-medium">
                 Dedicated to advancing the frontiers of Neurology with over 40 years of clinical expertise. 
-                Specializing in complex headache disorders, stroke management, and academic leadership 
-                at BLK-Max Super Speciality Hospital.
+                Specializing in complex headache disorders and academic leadership.
               </p>
             </motion.div>
 
@@ -67,13 +70,13 @@ const Hero = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 }
               }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-5"
             >
-              <a href="#contact" className="bg-primary text-white px-10 py-5 rounded-full font-bold text-sm tracking-wide flex items-center group transition-all hover:shadow-xl hover:translate-y-[-2px]">
+              <a href="#contact" className="bg-primary text-white px-10 py-5 rounded-full font-bold text-sm tracking-wide flex items-center group transition-all hover:shadow-2xl hover:shadow-primary/20 hover:translate-y-[-2px]">
                 Book Consultation
                 <ChevronRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="/about" className="border border-primary/10 px-10 py-5 rounded-full font-bold text-sm tracking-wide flex items-center hover:bg-muted transition-all">
+              <a href="/about" className="bg-white/40 backdrop-blur-sm border border-primary/10 px-10 py-5 rounded-full font-bold text-sm tracking-wide flex items-center hover:bg-white/80 transition-all shadow-sm">
                 Clinical Profile
               </a>
             </motion.div>
@@ -85,42 +88,53 @@ const Hero = () => {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl z-10 border-8 border-white">
+            <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-15px_rgba(0,0,0,0.2)] z-10 border-[12px] border-white">
               <Image
                 src="/images/dr/portrait.jpg"
                 alt="Dr. Debashish Chowdhury"
                 fill
-                className="object-cover"
+                className="object-cover scale-105 hover:scale-100 transition-transform duration-1000"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              
+              <div className="absolute bottom-10 left-10 right-10 text-white z-20">
+                 <p className="text-[10px] font-bold uppercase tracking-widest opacity-80 mb-2">Primary Affiliation</p>
+                 <p className="text-lg font-serif">BLK-Max Super Speciality Hospital</p>
+              </div>
             </div>
             
-            {/* Experience Badge - More Subtle */}
+            {/* Experience Badge - Floating (Re-positioned) */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -right-6 -bottom-6 p-8 bg-white rounded-2xl z-20 shadow-xl border border-border hidden md:block"
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -right-12 -bottom-12 p-8 bg-white rounded-[2.5rem] z-20 shadow-2xl border border-white/50 hidden md:block min-w-[180px]"
             >
-              <p className="text-3xl font-serif italic text-accent leading-none">40+</p>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-secondary mt-2">Years of Experience</p>
+              <p className="text-5xl font-serif italic text-primary leading-none">40<span className="text-accent">+</span></p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary mt-3">Years of <br/> Clinical Mastery</p>
             </motion.div>
+
+            {/* Decorative background element */}
+            <div className="absolute -left-10 -top-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10"></div>
           </motion.div>
         </div>
       </div>
 
-      {/* Affiliations - Cleaner */}
-      <div className="mt-20 py-8 bg-muted/50 border-y border-border/50">
-        <div className="container mx-auto px-6">
-          <p className="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-secondary/40 mb-8">Academic & Professional Affiliations</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-60">
-            {["BLK-Max Super Speciality", "GIPMER (GB Pant Hospital)", "Indian Academy of Neurology", "World Federation of Neurology", "American Academy of Neurology"].map((name, i) => (
-              <span key={i} className="text-xs font-bold text-primary/70">
+      {/* Affiliations - Auto Scroll Marquee */}
+      <div className="mt-20 py-10 bg-muted/50 border-y border-border/50">
+        <div className="container mx-auto px-6 mb-8">
+          <p className="text-center text-[10px] font-black uppercase tracking-[0.3em] text-secondary/50">Academic & Professional Affiliations</p>
+        </div>
+        <Marquee gradient={false} speed={40} pauseOnHover={true}>
+          <div className="flex items-center space-x-16 pr-16">
+            {["BLK-Max Super Speciality", "GIPMER (GB Pant Hospital)", "Indian Academy of Neurology", "World Federation of Neurology", "American Academy of Neurology", "Movement Disorder Society", "International Headache Society", "Harvard Medical International"].map((name, i) => (
+              <span key={i} className="text-sm font-bold text-primary/60 whitespace-nowrap uppercase tracking-widest">
                 {name}
               </span>
             ))}
           </div>
-        </div>
+        </Marquee>
       </div>
     </section>
   );

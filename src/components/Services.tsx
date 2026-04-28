@@ -2,67 +2,45 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Zap, Activity, ShieldCheck, Microscope, ArrowUpRight, Waves } from 'lucide-react';
+import { ArrowUpRight, Brain } from 'lucide-react';
+import { services } from '@/data/services';
+import Link from 'next/link';
 
 const Services = () => {
-  const expertises = [
-    {
-      title: 'Resistant Migraine',
-      desc: 'Recognized authority in the diagnosis and advanced management of complex and refractory headache disorders.',
-      icon: Brain,
-    },
-    {
-      title: 'Dizziness & Balance',
-      desc: 'Advanced diagnostic and therapeutic approach to vestibular disorders, vertigo, and chronic imbalance.',
-      icon: Waves,
-    },
-    {
-      title: 'Stroke Intervention',
-      desc: 'Acute stroke management including thrombolysis and mechanical thrombectomy to minimize damage.',
-      icon: Zap,
-    },
-    {
-      title: 'Complex Epilepsy',
-      desc: 'State-of-the-art care for patients with drug-resistant forms of epilepsy through precise diagnosis.',
-      icon: Microscope,
-    },
-    {
-      title: 'Alzheimer’s Care',
-      desc: 'Compassionate, holistic, and integrated management for Alzheimer’s disease and other dementias.',
-      icon: ShieldCheck,
-    },
-  ];
-
   return (
     <section id="services" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl lg:text-5xl font-serif text-primary mb-6">Advanced <span className="text-accent italic">Neurological</span> Services</h2>
-          <p className="text-secondary text-lg leading-relaxed">
+        <div className="text-center max-w-4xl mx-auto mb-24">
+          <div className="inline-block px-5 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent">Clinical Specializations</span>
+          </div>
+          <h2 className="text-5xl lg:text-7xl font-serif text-primary mb-10 leading-tight tracking-tight">Advanced <span className="text-accent italic">Neurological</span> Services</h2>
+          <p className="text-secondary text-xl leading-relaxed font-medium">
             Leveraging decades of experience and cutting-edge research to provide comprehensive diagnostic and therapeutic solutions for complex brain disorders.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {expertises.map((item, index) => (
+          {services.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-10 rounded-3xl bg-white border border-border group hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-2xl bg-accent/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <item.icon className="text-accent" size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-4 flex items-center">
-                {item.title}
-                <ArrowUpRight className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-accent" size={18} />
-              </h3>
-              <p className="text-secondary leading-relaxed text-sm mb-6">
-                {item.desc}
-              </p>
+              <Link href={`/services/${item.id}`} className="block h-full p-10 rounded-[2.5rem] bg-white border border-border/50 group hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500">
+                <div className="w-16 h-16 rounded-[1.5rem] bg-accent/5 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-sm">
+                  <item.icon size={32} />
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-5 flex items-center group-hover:text-accent transition-colors tracking-tight">
+                  {item.title}
+                  <ArrowUpRight className="ml-2 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all text-accent" size={20} />
+                </h3>
+                <p className="text-secondary/90 leading-relaxed text-base font-medium mb-6">
+                  {item.shortDesc}
+                </p>
+              </Link>
             </motion.div>
           ))}
 
@@ -71,17 +49,18 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="bg-accent p-10 rounded-3xl text-white flex flex-col justify-between group hover:shadow-xl transition-all"
+            className="bg-primary p-12 rounded-[2.5rem] text-white flex flex-col justify-between group hover:shadow-2xl transition-all relative overflow-hidden"
           >
-            <div>
-              <h3 className="text-2xl font-serif italic mb-4">Patient-Centric Philosophy</h3>
-              <p className="text-white/80 leading-relaxed text-sm">
+            <div className="absolute -right-10 -top-10 w-40 h-40 bg-accent/20 rounded-full blur-3xl group-hover:bg-accent/40 transition-colors"></div>
+            <div className="relative z-10">
+              <h3 className="text-3xl font-serif italic mb-6">Patient-Centric Philosophy</h3>
+              <p className="text-white/70 leading-relaxed text-base font-medium">
                 &quot;My practice integrates the latest scientific advancements with personalized treatment strategies to empower patients in their recovery journey.&quot;
               </p>
             </div>
-            <div className="mt-8 flex items-center space-x-3 font-bold uppercase tracking-widest text-[10px]">
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                <Brain size={16} />
+            <div className="mt-12 flex items-center space-x-4 font-bold uppercase tracking-[0.2em] text-[10px] relative z-10">
+              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/10">
+                <Brain size={18} className="text-accent" />
               </div>
               <span>Clinical Excellence</span>
             </div>

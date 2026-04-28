@@ -27,7 +27,7 @@ const ContactPage = () => {
             <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none group-hover:scale-110 transition-transform">
                 <Hospital size={250} />
             </div>
-            <h2 className="text-4xl font-black mb-12 tracking-tight">Clinical Practice</h2>
+            <h2 className="text-4xl font-black mb-12 tracking-tight text-primary">Clinical Practice</h2>
             
             <div className="space-y-12 mb-16">
               <div className="flex items-start space-x-6">
@@ -57,7 +57,7 @@ const ContactPage = () => {
               </div>
 
                <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-lavender rounded-[1.5rem] flex items-center justify-center text-accent shrink-0 shadow-lg shadow-accent/5">
+                <div className="w-16 h-16 bg-accent/5 rounded-[1.5rem] flex items-center justify-center text-accent shrink-0 shadow-lg shadow-accent/5 border border-accent/10">
                   <Phone size={28} />
                 </div>
                 <div>
@@ -74,7 +74,7 @@ const ContactPage = () => {
               href="https://www.blkmaxhospital.com/doctor/debashish-chowdhury" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full bg-primary text-white py-8 rounded-[2.5rem] font-black uppercase tracking-[0.2em] text-sm flex items-center justify-center group hover:bg-slate-900 transition-all shadow-2xl"
+              className="w-full bg-primary text-white py-8 rounded-[2.5rem] font-black uppercase tracking-[0.2em] text-sm flex items-center justify-center group hover:bg-accent transition-all shadow-2xl"
             >
               Confirm Appointment
               <ChevronRight className="ml-3 group-hover:translate-x-2 transition-transform" />
@@ -82,6 +82,33 @@ const ContactPage = () => {
           </div>
 
           <div className="space-y-10">
+              <div className="glass p-10 lg:p-14 rounded-[3.5rem] border border-white/40 shadow-xl overflow-hidden relative bg-white/40 backdrop-blur-3xl">
+                  <h3 className="text-3xl font-black mb-8 tracking-tight text-primary">Direct Inquiry Form</h3>
+                  <form className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/60 ml-2">Your Name</label>
+                        <input type="text" className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="John Doe" />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/60 ml-2">Phone Number</label>
+                        <input type="tel" className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="+91..." />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/60 ml-2">Email Address</label>
+                      <input type="email" className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="john@example.com" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/60 ml-2">Message</label>
+                      <textarea rows={4} className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all resize-none" placeholder="Describe your inquiry..."></textarea>
+                    </div>
+                    <button className="w-full bg-accent text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-primary transition-all shadow-xl shadow-accent/20">
+                      Send Inquiry
+                    </button>
+                  </form>
+              </div>
+
               <div className="glass p-12 rounded-[3.5rem] border border-white/40 shadow-xl overflow-hidden relative">
                   <div className="absolute top-0 right-0 p-8 opacity-10 bg-accent/5 rounded-bl-[4rem]">
                     <ShieldCheck size={40} className="text-accent" />
@@ -90,42 +117,18 @@ const ContactPage = () => {
                   <ul className="space-y-4">
                     {[
                       "Carry all previous MRI/CT scans",
-                      "Keep a 3-day headache diary if applicable",
+                      "Keep a 3-day headache diary",
                       "List of current medications",
-                      "Arrive 15 mins early for registration"
+                      "Arrive 15 mins early"
                     ].map((step, i) => (
                       <li key={i} className="flex items-center space-x-3 text-sm font-bold text-secondary">
-                        <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                        <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center text-accent text-[10px]">
                           {i+1}
                         </div>
                         <span>{step}</span>
                       </li>
                     ))}
                   </ul>
-              </div>
-
-              <div className="bg-accent p-12 rounded-[3.5rem] text-white shadow-2xl shadow-accent/20 relative group overflow-hidden">
-                <CreditCard className="absolute -right-10 -bottom-10 text-white/10 group-hover:scale-110 transition-transform" size={200} />
-                <h3 className="text-2xl font-black mb-6">Insurance & TPA</h3>
-                <p className="opacity-80 font-medium mb-8 leading-relaxed">
-                  The hospital clinic accepts major international and domestic health insurance providers including CGHS, DGHS, and corporate empanelments.
-                </p>
-                <button className="text-xs font-black uppercase tracking-widest py-4 px-8 border border-white/30 rounded-full hover:bg-white hover:text-accent transition-all">
-                  Check Empanelment List
-                </button>
-              </div>
-
-              <div className="glass p-12 rounded-[3.5rem] border border-white/40 shadow-xl flex items-center justify-between group cursor-pointer hover:border-accent/20 transition-all">
-                <div className="flex items-center space-x-6">
-                  <div className="w-16 h-16 bg-primary/5 rounded-[1.5rem] flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all shadow-inner">
-                    <Map size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-black">Get Directions</h3>
-                    <p className="text-xs font-bold text-secondary tracking-widest mt-1 uppercase">Navigate via Google Maps</p>
-                  </div>
-                </div>
-                <ChevronRight className="text-primary group-hover:translate-x-2 transition-transform" />
               </div>
           </div>
         </div>

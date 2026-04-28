@@ -41,7 +41,6 @@ const Navbar = () => {
       name: 'More', 
       dropdown: [
         { name: 'Testimonials', href: '/testimonials' },
-        { name: 'Gallery', href: '/gallery' },
         { name: 'Resources', href: '/resources' },
         { name: 'Awards', href: '/awards' },
       ] 
@@ -51,21 +50,21 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
       <div className="container mx-auto px-6">
-        <div className={`glass px-8 py-3 rounded-full flex items-center justify-between transition-all duration-500 ${scrolled ? 'shadow-[0_10px_30px_rgba(0,0,0,0.05)] border-white/50 backdrop-blur-2xl' : 'border-white/20 backdrop-blur-xl'}`}>
-          <Link href="/" className="text-xl flex items-center group">
-            <span className="text-primary font-bold tracking-tight">DR.</span> 
-            <span className="text-accent ml-1 font-serif italic tracking-wide group-hover:text-primary transition-colors">Debashish</span>
+        <div className={`glass px-10 py-4 rounded-full flex items-center justify-between transition-all duration-500 ${scrolled ? 'shadow-[0_15px_40px_rgba(0,0,0,0.08)] border-white/60 backdrop-blur-3xl' : 'border-white/30 backdrop-blur-2xl'}`}>
+          <Link href="/" className="text-2xl flex items-center group">
+            <span className="text-primary font-black tracking-tighter">DR.</span> 
+            <span className="text-accent ml-1.5 font-serif italic font-medium tracking-tight group-hover:text-primary transition-colors">Debashish</span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-10">
+          <div className="hidden lg:flex items-center space-x-12">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group/item" ref={link.dropdown ? dropdownRef : null}>
                 {link.dropdown ? (
                   <button
                     onMouseEnter={() => setActiveDropdown(link.name)}
                     onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                    className="flex items-center space-x-1 text-[11px] font-bold uppercase tracking-widest text-secondary hover:text-accent transition-colors"
+                    className="flex items-center space-x-1 text-[11px] font-bold uppercase tracking-[0.15em] text-primary/80 hover:text-accent transition-colors"
                   >
                     <span>{link.name}</span>
                     <ChevronDown size={12} className={`transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />
@@ -73,7 +72,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href={link.href}
-                    className="text-[11px] font-bold uppercase tracking-widest text-secondary hover:text-accent transition-colors"
+                    className="text-[11px] font-bold uppercase tracking-[0.15em] text-primary/80 hover:text-accent transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -84,18 +83,18 @@ const Navbar = () => {
                   <AnimatePresence>
                     {activeDropdown === link.name && (
                       <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        initial={{ opacity: 0, y: 15, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        exit={{ opacity: 0, y: 15, scale: 0.95 }}
                         onMouseLeave={() => setActiveDropdown(null)}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-white rounded-2xl p-4 shadow-2xl border border-border z-50"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-5 w-60 bg-white/95 backdrop-blur-xl rounded-[2rem] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-white/50 z-50"
                       >
                         <div className="flex flex-col space-y-1">
                           {link.dropdown.map((subItem) => (
                             <Link
                               key={subItem.name}
                               href={subItem.href}
-                              className="px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-accent hover:bg-muted rounded-xl transition-all"
+                              className="px-6 py-3.5 text-[10px] font-bold uppercase tracking-widest text-primary/70 hover:text-accent hover:bg-accent/5 rounded-2xl transition-all"
                               onClick={() => setActiveDropdown(null)}
                             >
                               {subItem.name}
@@ -111,7 +110,7 @@ const Navbar = () => {
             
             <Link
               href="/contact"
-              className="bg-primary text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-accent transition-all ml-4"
+              className="bg-primary text-white px-9 py-3.5 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-accent hover:shadow-lg hover:shadow-accent/20 transition-all ml-4"
             >
               Consult
             </Link>

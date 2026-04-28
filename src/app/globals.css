@@ -4,9 +4,9 @@
   --background: #FCFCFD;
   --foreground: #1A1C1E;
   --primary: #0F172A;
-  --secondary: #475569;
-  --accent: #2C5282; /* Professional Medical Blue */
-  --muted: #F1F5F9;
+  --secondary: #334155; /* Darker Slate for better readability */
+  --accent: #1E40AF; /* Deeper Professional Medical Blue */
+  --muted: #F8FAFC;
   --card: #FFFFFF;
   --border: #E2E8F0;
   --font-serif: var(--font-serif);
