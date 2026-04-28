@@ -48,9 +48,9 @@ const ContactPage = () => {
                   <Clock size={28} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-secondary mb-2">OPD Timings</h4>
+                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-secondary mb-2">OPD Days</h4>
                   <p className="text-xl font-bold text-primary leading-snug">
-                    Mon - Sat: 11:00 AM - 04:00 PM <br />
+                    Monday - Saturday <br />
                     <span className="text-sm text-secondary font-medium italic">(Prior Appointment Recommended)</span>
                   </p>
                 </div>

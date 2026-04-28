@@ -105,7 +105,7 @@ const MediaPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-accent/10 shadow-sm">
+          <div className="inline-flex items-center space-x-2 bg-white/70 dark:bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-accent/20 shadow-sm">
             <Radio size={16} className="text-accent" />
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-accent">News & Insights</span>
           </div>
@@ -125,7 +125,7 @@ const MediaPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
-              className="glass p-8 rounded-[3rem] border border-white/40 shadow-xl group hover:border-accent/30 transition-all"
+              className="glass p-8 rounded-[3rem] border border-white/60 shadow-xl group hover:border-accent/40 transition-all hover:shadow-2xl hover:-translate-y-1"
             >
               <div className="flex justify-between items-start mb-6">
                 <div className="p-4 bg-accent/10 rounded-2xl text-accent">
@@ -164,7 +164,7 @@ const MediaPage = () => {
                 whileHover={{ y: -10 }}
                 className="relative group cursor-pointer block"
               >
-                <div className="aspect-video bg-primary/5 rounded-[3rem] overflow-hidden border border-white/40 shadow-2xl relative">
+                <div className="aspect-video bg-primary/5 rounded-[3rem] overflow-hidden border border-white/60 shadow-2xl relative">
                   <img 
                     src={video.thumbnail} 
                     alt={video.title}
@@ -210,7 +210,7 @@ const MediaPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="glass p-8 rounded-[2.5rem] border border-white/40 shadow-lg group hover:border-accent/30 transition-all flex flex-col justify-between"
+                className="glass p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:border-accent/40 transition-all flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1"
               >
                 <div>
                   <div className="mb-6">{item.icon}</div>
@@ -226,7 +226,7 @@ const MediaPage = () => {
         </div>
 
         {/* Press Contact */}
-        <div className="text-center p-20 glass rounded-[4rem] border border-accent/20 bg-accent/5">
+        <div className="text-center p-20 glass rounded-[4rem] border border-accent/30 bg-accent/10 shadow-2xl">
           <h2 className="text-4xl font-black mb-6 tracking-tight">Media Enquiries</h2>
           <p className="text-xl text-secondary max-w-2xl mx-auto font-medium opacity-80 mb-10">
             For interviews, guest articles, or medical consultancy for media features, please reach out to our communications office.
