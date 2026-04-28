@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Award } from 'lucide-react';
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
+import MagneticButton from '@/components/MagneticButton';
 
 const Hero = () => {
   return (
@@ -72,13 +73,17 @@ const Hero = () => {
               }}
               className="flex flex-wrap gap-5"
             >
-              <a href="#contact" className="bg-primary text-white px-10 py-5 rounded-full font-bold text-sm tracking-wide flex items-center group transition-all hover:shadow-2xl hover:shadow-primary/20 hover:translate-y-[-2px]">
-                Book Consultation
-                <ChevronRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a href="/about" className="bg-white/40 backdrop-blur-sm border border-primary/10 px-10 py-5 rounded-full font-bold text-sm tracking-wide flex items-center hover:bg-white/80 transition-all shadow-sm">
-                Clinical Profile
-              </a>
+              <MagneticButton>
+                <a href="#contact" className="bg-primary text-white px-10 py-5 rounded-full font-bold text-sm tracking-wide flex items-center group transition-all hover:shadow-2xl hover:shadow-primary/20 hover:translate-y-[-2px]">
+                  Book Consultation
+                  <ChevronRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </MagneticButton>
+              <MagneticButton>
+                <a href="/about" className="bg-white/40 backdrop-blur-sm border border-primary/10 px-10 py-5 rounded-full font-bold text-sm tracking-wide flex items-center hover:bg-white/80 transition-all shadow-sm">
+                  Clinical Profile
+                </a>
+              </MagneticButton>
             </motion.div>
           </motion.div>
 

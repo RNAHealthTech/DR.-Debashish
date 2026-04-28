@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, GraduationCap, Trophy, Heart, ChevronRight } from 'lucide-react';
+import TiltCard from '@/components/TiltCard';
 
 const About = () => {
   const credentials = [
@@ -45,20 +46,24 @@ const About = () => {
                 </p>
                 
                 <div className="pt-10 grid grid-cols-2 gap-8">
-                  <div className="p-8 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-3xl border border-border/50 transition-all hover:shadow-xl hover:-translate-y-1">
-                    <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
-                      <Heart className="text-accent" size={24} />
+                  <TiltCard>
+                    <div className="p-8 h-full bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-3xl border border-border/50 transition-all hover:shadow-xl">
+                      <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                        <Heart className="text-accent" size={24} />
+                      </div>
+                      <h4 className="font-bold mb-3 text-primary text-lg">Patient-Centric</h4>
+                      <p className="text-sm text-secondary/80 leading-relaxed">Integrating the latest scientific advancements with personalized evidence-based strategies.</p>
                     </div>
-                    <h4 className="font-bold mb-3 text-primary text-lg">Patient-Centric</h4>
-                    <p className="text-sm text-secondary/80 leading-relaxed">Integrating the latest scientific advancements with personalized evidence-based strategies.</p>
-                  </div>
-                  <div className="p-8 bg-primary shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-3xl border border-primary/5 transition-all hover:shadow-2xl hover:-translate-y-1">
-                    <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
-                      <Trophy className="text-white" size={24} />
+                  </TiltCard>
+                  <TiltCard>
+                    <div className="p-8 h-full bg-primary shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-3xl border border-primary/5 transition-all hover:shadow-2xl">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+                        <Trophy className="text-white" size={24} />
+                      </div>
+                      <h4 className="font-bold mb-3 text-white text-lg">Pioneer</h4>
+                      <p className="text-sm text-white/70 leading-relaxed">Established India&apos;s first dedicated Headache Clinic in a tertiary care institute.</p>
                     </div>
-                    <h4 className="font-bold mb-3 text-white text-lg">Pioneer</h4>
-                    <p className="text-sm text-white/70 leading-relaxed">Established India&apos;s first dedicated Headache Clinic in a tertiary care institute.</p>
-                  </div>
+                  </TiltCard>
                 </div>
               </div>
             </div>

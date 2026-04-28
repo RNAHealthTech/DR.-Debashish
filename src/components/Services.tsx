@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Brain } from 'lucide-react';
 import { services } from '@/data/services';
 import Link from 'next/link';
+import TiltCard from '@/components/TiltCard';
 
 const Services = () => {
   return (
@@ -28,19 +29,22 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
+              className="h-full"
             >
-              <Link href={`/services/${item.id}`} className="block h-full p-10 rounded-[2.5rem] bg-white/60 dark:bg-card/40 backdrop-blur-xl border border-white/40 dark:border-white/10 group hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500">
-                <div className="w-16 h-16 rounded-[1.5rem] bg-accent/10 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-accent group-hover:to-primary group-hover:text-white transition-all duration-500 shadow-sm">
-                  <item.icon size={32} />
-                </div>
-                <h3 className="text-2xl font-bold text-primary mb-5 flex items-center group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent transition-all tracking-tight">
-                  {item.title}
-                  <ArrowUpRight className="ml-2 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all text-accent" size={20} />
-                </h3>
-                <p className="text-secondary/90 leading-relaxed text-base font-medium mb-6">
-                  {item.shortDesc}
-                </p>
-              </Link>
+              <TiltCard className="h-full">
+                <Link href={`/services/${item.id}`} className="block h-full p-10 rounded-[2.5rem] bg-white/60 dark:bg-card/40 backdrop-blur-xl border border-white/40 dark:border-white/10 group hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500">
+                  <div className="w-16 h-16 rounded-[1.5rem] bg-accent/10 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-accent group-hover:to-primary group-hover:text-white transition-all duration-500 shadow-sm">
+                    <item.icon size={32} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-primary mb-5 flex items-center group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent transition-all tracking-tight">
+                    {item.title}
+                    <ArrowUpRight className="ml-2 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all text-accent" size={20} />
+                  </h3>
+                  <p className="text-secondary/90 leading-relaxed text-base font-medium mb-6">
+                    {item.shortDesc}
+                  </p>
+                </Link>
+              </TiltCard>
             </motion.div>
           ))}
 

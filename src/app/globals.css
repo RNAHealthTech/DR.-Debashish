@@ -47,6 +47,31 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 64, 175, 0.3); /* Accent color with opacity */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 64, 175, 0.6);
+}
+
+/* Selection Highlight */
+::selection {
+  background: rgba(30, 64, 175, 0.2);
+  color: inherit;
+}
+
 @layer utilities {
   .glass {
     background: rgba(255, 255, 255, 0.7);
