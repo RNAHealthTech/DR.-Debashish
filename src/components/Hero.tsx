@@ -42,7 +42,7 @@ const Hero = () => {
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 }
               }}
-              className="text-5xl lg:text-7xl font-serif text-primary leading-[1.1] mb-10 tracking-tight"
+              className="text-4xl md:text-5xl lg:text-7xl font-serif text-primary leading-[1.1] mb-10 tracking-tight"
             >
               <span className="whitespace-nowrap">Excellence in</span> <br />
               <span className="italic text-gradient drop-shadow-sm font-bold">Neurological Care</span>
@@ -55,12 +55,12 @@ const Hero = () => {
               }}
               className="space-y-6 mb-12"
             >
-              <h2 className="text-3xl font-bold text-primary tracking-tight">Dr. (Prof.) Debashish Chowdhury</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary tracking-tight">Dr. (Prof.) Debashish Chowdhury</h2>
               <div className="h-1 w-20 bg-accent/20 rounded-full"></div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.1em] text-primary leading-relaxed max-w-md">
+              <p className="text-[10px] md:text-xs font-extrabold uppercase tracking-[0.1em] text-primary leading-relaxed max-w-md">
                 MBBS, MD (Medicine), DM (Neurology), FIAN, FANA, FRCP (London)
               </p>
-              <p className="text-xl text-secondary max-w-xl leading-relaxed font-medium">
+              <p className="text-base md:text-xl text-secondary max-w-xl leading-relaxed font-medium">
                 Dedicated to advancing the frontiers of Neurology with over 40 years of clinical expertise. 
                 Specializing in complex headache disorders and academic leadership.
               </p>
