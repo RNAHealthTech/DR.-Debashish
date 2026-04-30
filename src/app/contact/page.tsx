@@ -16,7 +16,7 @@ const ContactPage = () => {
           <h1 className="text-5xl lg:text-7xl font-black mb-8 tracking-tighter leading-tight">
             Consult <span className="text-gradient">Globally</span>
           </h1>
-          <p className="text-xl text-secondary font-medium opacity-60 leading-relaxed">
+          <p className="text-xl text-primary font-bold leading-relaxed">
             Leading consultations at BLK-Max Super Speciality Hospital. International patients can book via tele-consultation or in-person visits.
           </p>
         </div>
@@ -48,10 +48,10 @@ const ContactPage = () => {
                   <Clock size={28} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-secondary mb-2">OPD Days</h4>
+                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-primary mb-2">OPD Days</h4>
                   <p className="text-xl font-bold text-primary leading-snug">
                     Monday - Saturday <br />
-                    <span className="text-sm text-secondary font-medium italic">(Prior Appointment Recommended)</span>
+                    <span className="text-sm text-primary font-bold italic">(Prior Appointment Recommended)</span>
                   </p>
                 </div>
               </div>
@@ -61,10 +61,10 @@ const ContactPage = () => {
                   <Phone size={28} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-secondary mb-2">Contact</h4>
+                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-primary mb-2">Contact</h4>
                   <p className="text-xl font-bold text-primary leading-snug">
                     +91-11-30403040 <br />
-                    <span className="text-lg opacity-60">appointments@drdebashish.com</span>
+                    <span className="text-lg font-bold text-primary">appointments@drdebashish.com</span>
                   </p>
                 </div>
               </div>
@@ -87,20 +87,20 @@ const ContactPage = () => {
                   <form className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/60 ml-2">Your Name</label>
+                        <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Your Name</label>
                         <input type="text" className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="John Doe" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/60 ml-2">Phone Number</label>
+                        <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Phone Number</label>
                         <input type="tel" className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="+91..." />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/60 ml-2">Email Address</label>
+                      <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Email Address</label>
                       <input type="email" className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="john@example.com" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/60 ml-2">Message</label>
+                      <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Message</label>
                       <textarea rows={4} className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all resize-none" placeholder="Describe your inquiry..."></textarea>
                     </div>
                     <button className="w-full bg-accent text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-primary transition-all shadow-xl shadow-accent/20">
@@ -121,7 +121,7 @@ const ContactPage = () => {
                       "List of current medications",
                       "Arrive 15 mins early"
                     ].map((step, i) => (
-                      <li key={i} className="flex items-center space-x-3 text-sm font-bold text-secondary">
+                      <li key={i} className="flex items-center space-x-3 text-sm font-extrabold text-primary">
                         <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center text-accent text-[10px]">
                           {i+1}
                         </div>
