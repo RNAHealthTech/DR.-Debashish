@@ -175,15 +175,13 @@ const Navbar = () => {
                   </div>
                 ))}
                 <div className="pt-6 border-t border-white/10">
-                  <a
-                    href="https://www.blkmaxhospital.com/doctor/debashish-chowdhury"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/contact"
                     className="block w-full bg-accent text-white text-center py-5 rounded-3xl font-black uppercase tracking-widest text-xs shadow-xl shadow-accent/20"
                     onClick={() => setIsOpen(false)}
                   >
-                    Book Appointment
-                  </a>
+                    Consult
+                  </Link>
                 </div>
               </div>
             </motion.div>
