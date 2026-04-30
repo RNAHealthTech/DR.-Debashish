@@ -57,7 +57,7 @@ const Hero = () => {
             >
               <h2 className="text-3xl font-bold text-primary tracking-tight">Dr. (Prof.) Debashish Chowdhury</h2>
               <div className="h-1 w-20 bg-accent/20 rounded-full"></div>
-              <p className="text-xs font-bold uppercase tracking-[0.1em] text-primary/80 leading-relaxed max-w-md">
+              <p className="text-xs font-extrabold uppercase tracking-[0.1em] text-primary leading-relaxed max-w-md">
                 MBBS, MD (Medicine), DM (Neurology), FIAN, FANA, FRCP (London)
               </p>
               <p className="text-xl text-secondary max-w-xl leading-relaxed font-medium">
@@ -134,7 +134,7 @@ const Hero = () => {
         <Marquee gradient={false} speed={40} pauseOnHover={true}>
           <div className="flex items-center space-x-16 pr-16">
             {["BLK-Max Super Speciality", "GIPMER (GB Pant Hospital)", "Indian Academy of Neurology", "World Federation of Neurology", "American Academy of Neurology", "Movement Disorder Society", "International Headache Society", "Harvard Medical International"].map((name, i) => (
-              <span key={i} className="text-sm font-bold text-primary/60 whitespace-nowrap uppercase tracking-widest">
+              <span key={i} className="text-sm font-extrabold text-primary whitespace-nowrap uppercase tracking-widest">
                 {name}
               </span>
             ))}

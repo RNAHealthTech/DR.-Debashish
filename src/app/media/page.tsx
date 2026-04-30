@@ -112,7 +112,7 @@ const MediaPage = () => {
           <h1 className="text-5xl lg:text-7xl font-black tracking-tighter mb-6">
             In the <span className="text-gradient">Media</span>
           </h1>
-          <p className="text-xl text-secondary max-w-3xl mx-auto font-medium opacity-80">
+          <p className="text-xl text-primary font-bold max-w-3xl mx-auto">
             Latest interviews, articles, and public health awareness features across national and international media platforms.
           </p>
         </motion.div>
@@ -125,7 +125,7 @@ const MediaPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
-              className="glass p-8 rounded-[3rem] border border-white/60 shadow-xl group hover:border-accent/40 transition-all hover:shadow-2xl hover:-translate-y-1"
+              className="glass p-8 rounded-[3rem] border border-white/20 shadow-lg group hover:border-accent/40 transition-all hover:shadow-xl hover:-translate-y-1"
             >
               <div className="flex justify-between items-start mb-6">
                 <div className="p-4 bg-accent/10 rounded-2xl text-accent">
@@ -164,7 +164,7 @@ const MediaPage = () => {
                 whileHover={{ y: -10 }}
                 className="relative group cursor-pointer block"
               >
-                <div className="aspect-video bg-primary/5 rounded-[3rem] overflow-hidden border border-white/60 shadow-2xl relative">
+                <div className="aspect-video bg-primary/5 rounded-[3rem] overflow-hidden border border-white/20 shadow-xl relative">
                   <img 
                     src={video.thumbnail} 
                     alt={video.title}
@@ -210,7 +210,7 @@ const MediaPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="glass p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:border-accent/40 transition-all flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1"
+                className="glass p-8 rounded-[2.5rem] border border-white/20 shadow-lg group hover:border-accent/40 transition-all flex flex-col justify-between hover:shadow-xl hover:-translate-y-1"
               >
                 <div>
                   <div className="mb-6">{item.icon}</div>

@@ -2,9 +2,9 @@
 
 :root {
   --background: #FCFCFD;
-  --foreground: #1A1C1E;
-  --primary: #0F172A;
-  --secondary: #334155; /* Darker Slate for better readability */
+  --foreground: #09090B; /* Darker near-black */
+  --primary: #000000; /* Pure black for highest contrast */
+  --secondary: #1E293B; /* Darker Slate for better readability */
   --accent: #1E40AF; /* Deeper Professional Medical Blue */
   --muted: #F8FAFC;
   --card: #FFFFFF;
@@ -74,9 +74,9 @@ body {
 
 @layer utilities {
   .glass {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
   }
 

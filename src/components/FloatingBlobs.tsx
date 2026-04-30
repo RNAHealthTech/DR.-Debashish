@@ -66,7 +66,7 @@ const FloatingBlobs = () => {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-[15%] right-[10%] w-[350px] h-[350px] opacity-50 mix-blend-multiply dark:mix-blend-screen grayscale-[0.1] brightness-110"
+        className="absolute top-[15%] right-[10%] w-[350px] h-[350px] opacity-[0.08] dark:opacity-20 grayscale-[0.1] brightness-110 pointer-events-none"
       >
         <Image 
           src="/bg-3d-1.png" 
@@ -88,7 +88,7 @@ const FloatingBlobs = () => {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute bottom-[15%] left-[5%] w-[300px] h-[300px] opacity-40 mix-blend-multiply dark:mix-blend-screen grayscale-[0.2]"
+        className="absolute bottom-[15%] left-[5%] w-[300px] h-[300px] opacity-[0.08] dark:opacity-20 grayscale-[0.2] pointer-events-none"
       >
         <Image 
           src="/bg-3d-2.png" 
