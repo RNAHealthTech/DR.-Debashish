@@ -44,6 +44,14 @@ const MediaPage = () => {
       date: "Academic",
       icon: <Newspaper size={20} />,
       link: "https://www.youtube.com/watch?v=NoAHEJ2deXM"
+    },
+    {
+      type: "Conversation",
+      title: "IHS Video: A conversation on migraine research - Professor Rami Burstein & Debashish Chowdhury",
+      source: "International Headache Society",
+      date: "Academic",
+      icon: <Video size={20} />,
+      link: "#"
     }
   ];
 

@@ -13,22 +13,28 @@ const AwardsPage = () => {
       desc: "The highest academic honor bestowed by the Indian Academy of Neurology for outstanding contributions to the field."
     },
     {
+      title: "Eminent Medical and Health Education Teacher Award",
+      org: "Delhi Medical Association",
+      year: "2022",
+      desc: "Awarded for exceptional teaching skills, analytical mind and mentorship to over 100 neurologists."
+    },
+    {
       title: "Distinguished Alumnus Award",
       org: "Maulana Azad Medical College (MAMC)",
-      year: "2022",
+      year: "2021",
       desc: "Recognized for exemplary service in medical education and clinical leadership."
     },
     {
       title: "State Award for Healthcare Excellence",
       org: "Government of NCT of Delhi",
-      year: "2016",
-      desc: "Awarded by the Chief Minister for exceptional service in public healthcare at G.B. Pant Hospital."
+      year: "2015-16",
+      desc: "Awarded by the Government of NCT of Delhi for meritorious services in the field of health care."
     },
     {
       title: "Bhagirathi Samman",
-      org: "National Social Forum",
+      org: "Bhagirathi Samajik Saanskritik Manch",
       year: "2013",
-      desc: "For pioneering work in establishing dedicated headache clinics in India."
+      desc: "Awarded for Neurological patient care."
     },
     {
       title: "Indira Gandhi Appreciation Award",

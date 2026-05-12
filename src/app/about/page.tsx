@@ -152,6 +152,54 @@ const AboutPage = () => {
           </section>
         </div>
 
+        {/* Teaching & Speaking Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-32">
+          <section>
+            <div className="flex items-center space-x-4 mb-12">
+               <GraduationCap className="text-accent" size={32} />
+               <h2 className="text-4xl font-black tracking-tight">A Revered Teacher</h2>
+            </div>
+            <div className="space-y-4">
+              {[
+                "Has supervised/co-supervised more than 60 dissertations for DM (Neurology), MD, PhD, and MSc students",
+                "Has been a mentor to > 100 neurologists",
+                "An astute clinician and an excellent teacher",
+                "He is adored by his students for his teaching skills and analytical mind",
+                "Has been instrumental in revamping the DM Neurology Course at GIPMER",
+                "Started the first Comprehensive Stroke unit in a Government Hospital in North India",
+                "Runs a Headache Clinic with more than 12000 patients enrolled",
+                "Started the first Headache Fellowship in India and one fellow recently completed the fellowship"
+              ].map((item, i) => (
+                <div key={i} className="flex items-start space-x-3 text-sm font-bold text-secondary bg-primary/5 dark:bg-white/5 p-4 rounded-2xl">
+                  <CheckCircle2 size={18} className="text-accent shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <div className="flex items-center space-x-4 mb-12">
+               <Globe className="text-accent" size={32} />
+               <h2 className="text-4xl font-black tracking-tight">Excellent Speaker</h2>
+            </div>
+            <div className="space-y-4">
+              {[
+                "Given more than 500 lectures and 10 orations in the last 30 years of his career",
+                "Delivered Prof G Arjundas Oration, Prof B C Bansal and Mrs Uma Bansal Oration, and Prof (Dr) Shyamal Sen Oration",
+                "Organised more than 20 national and international scientific conferences on neurological and headache disorders",
+                "Has appeared in more than 50 public health awareness programs, public lectures, newspaper interviews and numerous appearances in TV",
+                "Was invited to deliver a lecture in the recently concluded G20 Summit in Mizoram"
+              ].map((item, i) => (
+                <div key={i} className="flex items-start space-x-3 text-sm font-bold text-secondary bg-primary/5 dark:bg-white/5 p-4 rounded-2xl">
+                  <CheckCircle2 size={18} className="text-accent shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+
         {/* Awards & Memberships */}
         <div className="grid lg:grid-cols-3 gap-12 mb-32">
           <div className="lg:col-span-2">
