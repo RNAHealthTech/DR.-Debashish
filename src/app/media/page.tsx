@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Newspaper, Radio, ExternalLink, Video, Tv } from 'lucide-react';
+import { Play, Newspaper, Radio, ExternalLink, Video, Tv, ChevronDown } from 'lucide-react';
 
 // Custom Brand Icons since Lucide v1 removed them
 const FacebookIcon = ({ size = 24, className = "" }) => (
@@ -18,6 +18,8 @@ const YoutubeIcon = ({ size = 24, className = "" }) => (
 );
 
 const MediaPage = () => {
+  const [videoFilter, setVideoFilter] = useState('All');
+
   const mediaItems = [
     {
       type: "Interview",
@@ -51,30 +53,53 @@ const MediaPage = () => {
       duration: "05:24",
       url: "https://www.youtube.com/watch?v=90QaraGGL0c",
       thumbnail: "https://img.youtube.com/vi/90QaraGGL0c/maxresdefault.jpg",
-      platform: "YouTube"
+      platform: "YouTube",
+      category: "Patient Counseling"
     },
     {
       title: "Good Evening India I Prevention of Headache & Migraine",
       duration: "24:15",
       url: "https://www.youtube.com/watch?v=NbzRd2VXgKM",
       thumbnail: "https://img.youtube.com/vi/NbzRd2VXgKM/maxresdefault.jpg",
-      platform: "YouTube"
+      platform: "YouTube",
+      category: "TV/Media Public Awareness"
     },
     {
       title: "Different types of Migraine Treatment",
       duration: "10:45",
       url: "https://www.youtube.com/watch?v=V6EjfGc8Zuc",
       thumbnail: "https://img.youtube.com/vi/V6EjfGc8Zuc/maxresdefault.jpg",
-      platform: "YouTube"
+      platform: "YouTube",
+      category: "Patient Counseling"
     },
     {
       title: "DD Morning Show | Hello Doctor | Brain Tumour",
       duration: "15:30",
       url: "https://www.youtube.com/watch?v=nrgIhb8GOOY",
       thumbnail: "https://img.youtube.com/vi/nrgIhb8GOOY/maxresdefault.jpg",
-      platform: "YouTube"
+      platform: "YouTube",
+      category: "TV/Media Public Awareness"
+    },
+    {
+      title: "Keynote Address on Migraine Innovations",
+      duration: "45:10",
+      url: "https://www.youtube.com/watch?v=nrgIhb8GOOY",
+      thumbnail: "https://img.youtube.com/vi/nrgIhb8GOOY/maxresdefault.jpg",
+      platform: "YouTube",
+      category: "Conference Talks"
     }
   ];
+
+  const categories = [
+    "All",
+    "TV/Media Public Awareness",
+    "Patient Counseling",
+    "Conference Talks"
+  ];
+
+  const filteredVideos = videoFilter === 'All' 
+    ? videos 
+    : videos.filter(v => v.category === videoFilter);
 
   const socialMedia = [
     {
@@ -150,12 +175,28 @@ const MediaPage = () => {
 
         {/* Videos Section */}
         <div className="mb-32">
-          <div className="flex items-center space-x-4 mb-12">
-            <Video className="text-accent" size={32} />
-            <h2 className="text-4xl font-black tracking-tight">Featured Videos</h2>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+            <div className="flex items-center space-x-4">
+              <Video className="text-accent" size={32} />
+              <h2 className="text-4xl font-black tracking-tight">Featured Videos</h2>
+            </div>
+            <div className="relative min-w-[280px]">
+              <select 
+                value={videoFilter}
+                onChange={(e) => setVideoFilter(e.target.value)}
+                className="w-full appearance-none bg-white/70 dark:bg-white/5 backdrop-blur-md border border-primary/20 dark:border-white/20 rounded-2xl py-3 px-5 pr-10 text-sm font-bold focus:outline-none focus:border-accent transition-colors cursor-pointer"
+              >
+                {categories.map((cat, idx) => (
+                  <option key={idx} value={cat} className="text-black dark:text-black">{cat}</option>
+                ))}
+              </select>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary dark:text-white/70">
+                <ChevronDown size={18} />
+              </div>
+            </div>
           </div>
           <div className="grid md:grid-cols-2 gap-12">
-            {videos.map((video, i) => (
+            {filteredVideos.map((video, i) => (
               <motion.a
                 key={i}
                 href={video.url}
@@ -187,7 +228,7 @@ const MediaPage = () => {
                     <h3 className="text-2xl font-black tracking-tight mb-2 group-hover:text-accent transition-colors">{video.title}</h3>
                     <span className="text-[10px] font-black bg-accent/10 text-accent px-3 py-1 rounded-full shrink-0 ml-4">{video.duration}</span>
                   </div>
-                  <p className="text-secondary font-medium opacity-60 italic">Educational Series</p>
+                  <p className="text-secondary font-medium opacity-60 italic">{video.category}</p>
                 </div>
               </motion.a>
             ))}

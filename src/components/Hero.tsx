@@ -104,8 +104,8 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               
               <div className="absolute bottom-10 left-10 right-10 text-white z-20">
-                 <p className="text-[10px] font-bold uppercase tracking-widest opacity-80 mb-2">Primary Affiliation</p>
-                 <p className="text-lg font-serif">BLK-Max Super Speciality Hospital</p>
+                 <p className="text-[10px] font-bold uppercase tracking-widest opacity-80 mb-2">Event</p>
+                 <p className="text-lg font-serif">Indian Academy of Neurology Annual Conference</p>
               </div>
             </div>
             
