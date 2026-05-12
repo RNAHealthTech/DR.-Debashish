@@ -18,7 +18,7 @@ const AboutPage = () => {
     },
     {
       title: "Director Professor & Head",
-      org: "Department of Neurology, G.B. Pant Hospital & Maulana Azad Medical College",
+      org: "Department of Neurology, G.B. Pant Hospital",
       period: "1996 - 2025",
     },
     {

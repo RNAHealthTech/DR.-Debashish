@@ -42,7 +42,7 @@ const About = () => {
                   Dr. (Prof.) Debashish Chowdhury stands as a preeminent figure globally, recognized for his profound expertise in headache management, stroke medicine, and neurodegenerative disorders.
                 </p>
                 <p>
-                  With a career spanning over four decades, he currently serves as the <strong className="text-primary font-bold">Vice Chairman & Academic Head – Neurology</strong> at BLK-Max Super Speciality Hospital. Previously, he led the Neurology department at <strong>G.B. Pant Hospital & Maulana Azad Medical College</strong> from 1996 to 2025 as Director Professor & Head.
+                  With a career spanning over four decades, he currently serves as the <strong className="text-primary font-bold">Vice Chairman & Academic Head – Neurology</strong> at BLK-Max Super Speciality Hospital. Previously, he led the Neurology department at <strong>G.B. Pant Hospital</strong> from 1996 to 2025 as Director Professor & Head.
                 </p>
                 
                 <div className="pt-10 grid grid-cols-2 gap-8">

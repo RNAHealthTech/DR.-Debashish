@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Play, Newspaper, Radio, ExternalLink, Video, Tv, ChevronDown } from 'lucide-react';
 
@@ -17,8 +18,19 @@ const YoutubeIcon = ({ size = 24, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
 );
 
-const MediaPage = () => {
-  const [videoFilter, setVideoFilter] = useState('All');
+const MediaContent = () => {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
+  
+  const [videoFilter, setVideoFilter] = useState(categoryParam || 'All');
+
+  useEffect(() => {
+    if (categoryParam) {
+      setVideoFilter(categoryParam);
+    } else {
+      setVideoFilter('All');
+    }
+  }, [categoryParam]);
 
   const mediaItems = [
     {
@@ -188,20 +200,6 @@ const MediaPage = () => {
               <Video className="text-accent" size={32} />
               <h2 className="text-4xl font-black tracking-tight">Featured Videos</h2>
             </div>
-            <div className="relative min-w-[280px]">
-              <select 
-                value={videoFilter}
-                onChange={(e) => setVideoFilter(e.target.value)}
-                className="w-full appearance-none bg-white/70 dark:bg-white/5 backdrop-blur-md border border-primary/20 dark:border-white/20 rounded-2xl py-3 px-5 pr-10 text-sm font-bold focus:outline-none focus:border-accent transition-colors cursor-pointer"
-              >
-                {categories.map((cat, idx) => (
-                  <option key={idx} value={cat} className="text-black dark:text-black">{cat}</option>
-                ))}
-              </select>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary dark:text-white/70">
-                <ChevronDown size={18} />
-              </div>
-            </div>
           </div>
           <div className="grid md:grid-cols-2 gap-12">
             {filteredVideos.map((video, i) => (
@@ -286,6 +284,14 @@ const MediaPage = () => {
         </div>
       </div>
     </main>
+  );
+};
+
+const MediaPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MediaContent />
+    </Suspense>
   );
 };
 

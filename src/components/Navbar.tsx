@@ -9,8 +9,20 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const desktopMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (name: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveDropdown(name);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300); // Generous delay to prevent accidental closing
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +35,7 @@ const Navbar = () => {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const isOutsideDesktop = dropdownRef.current && !dropdownRef.current.contains(event.target as Node);
+      const isOutsideDesktop = desktopMenuRef.current && !desktopMenuRef.current.contains(event.target as Node);
       const isOutsideMobile = !mobileMenuRef.current || !mobileMenuRef.current.contains(event.target as Node);
       
       if (isOutsideDesktop && isOutsideMobile) {
@@ -40,7 +52,15 @@ const Navbar = () => {
     { name: 'Services', href: '/services' },
     { name: 'Academic', href: '/academic' },
     { name: 'Publications', href: '/publications' },
-    { name: 'Media', href: '/media' },
+    { 
+      name: 'Media', 
+      dropdown: [
+        { name: 'All Media', href: '/media' },
+        { name: 'TV/Media', href: '/media?category=TV/Media Public Awareness' },
+        { name: 'Patient Counseling', href: '/media?category=Patient Counseling' },
+        { name: 'Conference Talks', href: '/media?category=Conference Talks' },
+      ]
+    },
     { 
       name: 'More', 
       dropdown: [
@@ -62,53 +82,43 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-12">
+          <div className="hidden lg:flex items-center space-x-12" ref={desktopMenuRef}>
             {navLinks.map((link) => (
-              <div key={link.name} className="relative group/item" ref={link.dropdown ? dropdownRef : null}>
+              <div 
+                key={link.name} 
+                className="relative group/dropdown"
+              >
                 {link.dropdown ? (
-                  <button
-                    onMouseEnter={() => setActiveDropdown(link.name)}
-                    onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                    className="flex items-center space-x-1 text-[11px] font-extrabold uppercase tracking-[0.15em] text-primary hover:text-accent transition-colors"
-                  >
+                  <button className="flex items-center space-x-1 text-[11px] font-extrabold uppercase tracking-[0.15em] text-primary hover:text-accent transition-colors py-4">
                     <span>{link.name}</span>
-                    <ChevronDown size={12} className={`transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />
+                    <ChevronDown size={12} className="transition-transform duration-300 group-hover/dropdown:rotate-180" />
                   </button>
                 ) : (
                   <Link
                     href={link.href}
-                    className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-primary hover:text-accent transition-colors"
+                    className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-primary hover:text-accent transition-colors py-4 block"
                   >
                     {link.name}
                   </Link>
                 )}
 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu - Pure CSS */}
                 {link.dropdown && (
-                  <AnimatePresence>
-                    {activeDropdown === link.name && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 15, scale: 0.95 }}
-                        onMouseLeave={() => setActiveDropdown(null)}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-5 w-60 bg-white/95 backdrop-blur-xl rounded-[2rem] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/20 z-50"
-                      >
-                        <div className="flex flex-col space-y-1">
-                          {link.dropdown.map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              href={subItem.href}
-                              className="px-6 py-3.5 text-[10px] font-extrabold uppercase tracking-widest text-primary hover:text-accent hover:bg-accent/5 rounded-2xl transition-all"
-                              onClick={() => setActiveDropdown(null)}
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-60 z-50 opacity-0 invisible translate-y-4 group-hover/dropdown:opacity-100 group-hover/dropdown:visible group-hover/dropdown:translate-y-0 transition-all duration-300 pointer-events-none group-hover/dropdown:pointer-events-auto">
+                    <div className="bg-white/95 backdrop-blur-xl rounded-[2rem] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/20">
+                      <div className="flex flex-col space-y-1">
+                        {link.dropdown.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="px-6 py-3.5 text-[10px] font-extrabold uppercase tracking-widest text-primary hover:text-accent hover:bg-accent/5 rounded-2xl transition-all"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
             ))}

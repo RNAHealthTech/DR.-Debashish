@@ -34,7 +34,7 @@ const AcademicPage = () => {
     },
     {
       role: "Director Professor",
-      institution: "Maulana Azad Medical College (MAMC)",
+      institution: "G.B. Pant Hospital, New Delhi",
       description: "Over 25 years of teaching postgraduate and doctoral students."
     },
     {
