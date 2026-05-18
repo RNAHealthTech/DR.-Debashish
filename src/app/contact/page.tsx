@@ -1,10 +1,38 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Calendar, ShieldCheck, Map, CreditCard, ChevronRight, Hospital } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Calendar, ShieldCheck, Map, CreditCard, ChevronRight, Hospital, CheckCircle } from 'lucide-react';
 
 const ContactPage = () => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'succeeded' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+    
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mwvzkqol', {
+        method: 'POST',
+        body: data,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+      
+      if (response.ok) {
+        setStatus('succeeded');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
   return (
     <main className="pt-32 pb-20">
       <div className="container mx-auto px-6">
@@ -84,29 +112,56 @@ const ContactPage = () => {
           <div className="space-y-10">
               <div className="glass p-10 lg:p-14 rounded-[3.5rem] border border-white/40 shadow-xl overflow-hidden relative bg-white/40 backdrop-blur-3xl">
                   <h3 className="text-3xl font-black mb-8 tracking-tight text-primary">Direct Inquiry Form</h3>
-                  <form className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Your Name</label>
-                        <input type="text" className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="John Doe" />
+                  {status === 'succeeded' ? (
+                    <div className="bg-white/50 backdrop-blur-md border border-accent/20 rounded-[2rem] p-10 text-center shadow-inner">
+                      <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <CheckCircle className="text-accent w-10 h-10" />
+                      </div>
+                      <h3 className="text-2xl font-black text-primary mb-4">Inquiry Received!</h3>
+                      <p className="text-primary/70 font-medium mb-8">
+                        Thank you for reaching out. We have received your inquiry and will contact you shortly.
+                      </p>
+                      <button 
+                        onClick={() => setStatus('idle')}
+                        className="bg-accent text-white py-3 px-8 rounded-xl font-bold uppercase tracking-wider text-xs transition-all shadow-lg hover:shadow-accent/30"
+                      >
+                        Submit Another
+                      </button>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Your Name</label>
+                          <input type="text" name="name" required className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="John Doe" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Phone Number</label>
+                          <input type="tel" name="phone" required className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="+91..." />
+                        </div>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Phone Number</label>
-                        <input type="tel" className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="+91..." />
+                        <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Email Address</label>
+                        <input type="email" name="email" required className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="john@example.com" />
                       </div>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Email Address</label>
-                      <input type="email" className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all" placeholder="john@example.com" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Message</label>
-                      <textarea rows={4} className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all resize-none" placeholder="Describe your inquiry..."></textarea>
-                    </div>
-                    <button className="w-full bg-accent text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-primary transition-all shadow-xl shadow-accent/20">
-                      Send Inquiry
-                    </button>
-                  </form>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary ml-2">Message</label>
+                        <textarea name="message" required rows={4} className="w-full bg-white border border-border rounded-2xl px-6 py-4 text-primary focus:outline-none focus:border-accent transition-all resize-none" placeholder="Describe your inquiry..."></textarea>
+                      </div>
+                      <button 
+                        type="submit" 
+                        disabled={status === 'submitting'}
+                        className="w-full bg-accent text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-primary transition-all shadow-xl shadow-accent/20 disabled:opacity-70 disabled:cursor-not-allowed"
+                      >
+                        {status === 'submitting' ? 'Sending...' : 'Send Inquiry'}
+                      </button>
+                      {status === 'error' && (
+                        <p className="text-red-500 text-center text-sm font-bold mt-4">
+                          Oops! There was a problem submitting your form.
+                        </p>
+                      )}
+                    </form>
+                  )}
               </div>
 
               <div className="glass p-12 rounded-[3.5rem] border border-white/40 shadow-xl overflow-hidden relative">

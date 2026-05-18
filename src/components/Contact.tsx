@@ -1,9 +1,37 @@
 'use client';
 
-import React from 'react';
-import { Phone, Mail, MapPin, Calendar, Clock, ShieldCheck } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Calendar, Clock, ShieldCheck, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'succeeded' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+    
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mwvzkqol', {
+        method: 'POST',
+        body: data,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+      
+      if (response.ok) {
+        setStatus('succeeded');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-muted/20">
       <div className="container mx-auto px-6">
@@ -59,64 +87,100 @@ const Contact = () => {
             </div>
 
             <div className="p-10 lg:p-20 flex flex-col justify-center">
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+              {status === 'succeeded' ? (
+                <div className="bg-white/5 border border-accent/30 rounded-[2rem] p-10 text-center">
+                  <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="text-accent w-10 h-10" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">Request Sent Successfully!</h3>
+                  <p className="text-white/60 text-sm mb-8">
+                    Thank you for reaching out. Our team will review your inquiry and get back to you shortly.
+                  </p>
+                  <button 
+                    onClick={() => setStatus('idle')}
+                    className="bg-white/10 hover:bg-white/20 text-white py-3 px-8 rounded-xl font-bold uppercase tracking-wider text-xs transition-all"
+                  >
+                    Send Another Message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Full Name</label>
+                      <input 
+                        type="text" 
+                        name="name"
+                        required
+                        placeholder="e.g. John Doe"
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/10 transition-all"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Phone Number</label>
+                      <input 
+                        type="tel" 
+                        name="phone"
+                        required
+                        placeholder="+91 00000 00000"
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/10 transition-all"
+                      />
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Full Name</label>
+                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Email Address</label>
                     <input 
-                      type="text" 
-                      placeholder="e.g. John Doe"
+                      type="email" 
+                      name="email"
+                      required
+                      placeholder="john@example.com"
                       className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/10 transition-all"
                     />
                   </div>
+
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      placeholder="+91 00000 00000"
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/10 transition-all"
-                    />
+                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Select Service</label>
+                    <select name="service" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:bg-white/10 transition-all appearance-none">
+                      <option className="bg-primary">General Consultation</option>
+                      <option className="bg-primary">Migraine & Headache</option>
+                      <option className="bg-primary">Stroke Management</option>
+                      <option className="bg-primary">Memory Disorders</option>
+                      <option className="bg-primary">Epilepsy Care</option>
+                    </select>
                   </div>
-                </div>
 
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Email Address</label>
-                  <input 
-                    type="email" 
-                    placeholder="john@example.com"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/10 transition-all"
-                  />
-                </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Your Message</label>
+                    <textarea 
+                      name="message"
+                      required
+                      rows={4}
+                      placeholder="How can we help you?"
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/10 transition-all resize-none"
+                    ></textarea>
+                  </div>
 
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Select Service</label>
-                  <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:bg-white/10 transition-all appearance-none">
-                    <option className="bg-primary">General Consultation</option>
-                    <option className="bg-primary">Migraine & Headache</option>
-                    <option className="bg-primary">Stroke Management</option>
-                    <option className="bg-primary">Memory Disorders</option>
-                    <option className="bg-primary">Epilepsy Care</option>
-                  </select>
-                </div>
+                  <button 
+                    type="submit" 
+                    disabled={status === 'submitting'}
+                    className="w-full bg-accent text-white py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-primary transition-all shadow-xl shadow-accent/20 flex items-center justify-center space-x-3 group disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    <span>{status === 'submitting' ? 'Sending...' : 'Send Message'}</span>
+                    {!status && <Calendar size={16} className="group-hover:rotate-12 transition-transform" />}
+                  </button>
 
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 ml-2">Your Message</label>
-                  <textarea 
-                    rows={4}
-                    placeholder="How can we help you?"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-accent focus:bg-white/10 transition-all resize-none"
-                  ></textarea>
-                </div>
+                  {status === 'error' && (
+                    <p className="text-red-400 text-center text-sm font-medium mt-4">
+                      Oops! There was a problem submitting your form. Please try again.
+                    </p>
+                  )}
 
-                <button className="w-full bg-accent text-white py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-primary transition-all shadow-xl shadow-accent/20 flex items-center justify-center space-x-3 group">
-                  <span>Send Message</span>
-                  <Calendar size={16} className="group-hover:rotate-12 transition-transform" />
-                </button>
-
-                <p className="text-center text-white/30 text-[10px] font-medium tracking-wide">
-                  Typically responds within 24-48 business hours.
-                </p>
-              </form>
+                  <p className="text-center text-white/30 text-[10px] font-medium tracking-wide mt-6">
+                    Typically responds within 24-48 business hours.
+                  </p>
+                </form>
+              )}
             </div>
           </div>
         </div>
