@@ -25,6 +25,22 @@ const ContactPage = () => {
       
       if (response.ok) {
         setStatus('succeeded');
+        
+        // Construct WhatsApp message
+        const name = data.get('name');
+        const phone = data.get('phone');
+        const email = data.get('email');
+        const message = data.get('message');
+        
+        const whatsappText = `New Appointment Inquiry
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Message: ${message}`;
+        
+        const whatsappUrl = `https://wa.me/918595814946?text=${encodeURIComponent(whatsappText)}`;
+        window.open(whatsappUrl, '_blank');
+        
         form.reset();
       } else {
         setStatus('error');
