@@ -19,23 +19,23 @@ const ebGaramond = EB_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: "Dr. (Prof.) Debashish Chowdhury | International Authority in Neurology",
+    default: "Dr. Debashish Chowdhury | Best Headache Specialist & Neurologist in Karol Bagh, Delhi, India",
     template: "%s | Dr. Debashish Chowdhury"
   },
-  description: "Official website of Dr. Debashish Chowdhury, a global leader in headache management, stroke medicine, and neurodegenerative disorders. Vice Chairman & Academic Head – Neurology at BLK-Max Hospital.",
-  keywords: ["Neurologist in Delhi", "Best Headache Specialist India", "Stroke Specialist Delhi", "BLK-Max Neurology", "Dr. Debashish Chowdhury", "Neurology India", "Migraine Treatment Delhi"],
+  description: "Consult Dr. Debashish Chowdhury, a leading headache specialist and neurologist at BLK-Max Hospital in Karol Bagh, Delhi. Expert care for migraine, stroke, epilepsy, and neurodegenerative disorders across India.",
+  keywords: ["Dr. Debashish Chowdhury", "headache specialist", "neurologist", "migraine treatment", "stroke specialist", "epilepsy care", "Alzheimer's care", "neurodegenerative disorders", "Karol Bagh", "Delhi", "India", "BLK-Max Hospital"],
   authors: [{ name: "Dr. Debashish Chowdhury" }],
   creator: "Dr. Debashish Chowdhury",
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://drdebashish.com",
+    url: "https://headachespecialistindia.com",
     siteName: "Dr. Debashish Chowdhury",
-    title: "Dr. (Prof.) Debashish Chowdhury | International Authority in Neurology",
-    description: "Official website of Dr. Debashish Chowdhury, a global leader in headache management, stroke medicine, and neurodegenerative disorders.",
+    title: "Dr. Debashish Chowdhury | Best Headache Specialist & Neurologist in Karol Bagh, Delhi, India",
+    description: "Consult Dr. Debashish Chowdhury, a leading headache specialist and neurologist at BLK-Max Hospital in Karol Bagh, Delhi. Expert care for migraine, stroke, epilepsy, and neurodegenerative disorders across India.",
     images: [
       {
-        url: "/images/dr/portrait.jpg",
+        url: "https://headachespecialistindia.com/images/dr/portrait.jpg",
         width: 1200,
         height: 630,
         alt: "Dr. Debashish Chowdhury"
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. (Prof.) Debashish Chowdhury | Neurology Expert",
-    description: "Vice Chairman & Academic Head – Neurology at BLK-Max Hospital.",
-    images: ["/images/dr/portrait.jpg"],
+    title: "Dr. Debashish Chowdhury | Best Headache Specialist & Neurologist",
+    description: "Consult Dr. Debashish Chowdhury, a leading headache specialist and neurologist at BLK-Max Hospital in Karol Bagh, Delhi.",
+    images: ["https://headachespecialistindia.com/images/dr/portrait.jpg"],
   },
   robots: {
     index: true,
