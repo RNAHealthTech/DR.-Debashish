@@ -51,7 +51,7 @@ const FloatingWidgets = () => {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
-        href="https://wa.me/918595814946"
+        href="https://wa.me/919217707822"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-gradient-to-r from-emerald-500 to-emerald-400 text-white rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-1 hover:scale-105 transition-all group relative"

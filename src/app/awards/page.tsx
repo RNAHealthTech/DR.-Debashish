@@ -7,12 +7,6 @@ import { Award, Trophy, Star, ShieldCheck, Medal } from 'lucide-react';
 const AwardsPage = () => {
   const allAwards = [
     {
-      title: "IAN Presidential Oration",
-      org: "Indian Academy of Neurology",
-      year: "2024",
-      desc: "The highest academic honor bestowed by the Indian Academy of Neurology for outstanding contributions to the field."
-    },
-    {
       title: "Eminent Medical and Health Education Teacher Award",
       org: "Delhi Medical Association",
       year: "2022",
@@ -80,10 +74,10 @@ const AwardsPage = () => {
               className="glass p-12 rounded-[4rem] border border-white/40 shadow-xl group hover:border-accent/30 transition-all relative overflow-hidden"
             >
               <Medal className="absolute -right-8 -top-8 text-accent/5 group-hover:text-accent/10 transition-colors" size={200} />
-              
+
               <div className="flex justify-between items-start mb-8 relative z-10">
                 <div className="p-5 bg-accent/10 rounded-[2rem] text-accent">
-                   <Award size={32} />
+                  <Award size={32} />
                 </div>
                 <span className="text-3xl font-black text-primary/10 dark:text-white/10 group-hover:text-accent/20 transition-colors">{award.year}</span>
               </div>
@@ -102,24 +96,24 @@ const AwardsPage = () => {
 
         {/* Global Impact */}
         <div className="p-20 glass rounded-[5rem] border border-accent/20 bg-accent/5 text-center">
-            <div className="flex justify-center space-x-12 mb-12 opacity-50">
-                <div className="text-center">
-                    <div className="text-5xl font-black text-primary dark:text-white mb-2">40+</div>
-                    <div className="text-[10px] font-black uppercase tracking-widest">Years of Service</div>
-                </div>
-                <div className="text-center">
-                    <div className="text-5xl font-black text-primary dark:text-white mb-2">15+</div>
-                    <div className="text-[10px] font-black uppercase tracking-widest">National Awards</div>
-                </div>
-                <div className="text-center">
-                    <div className="text-5xl font-black text-primary dark:text-white mb-2">100+</div>
-                    <div className="text-[10px] font-black uppercase tracking-widest">Publications</div>
-                </div>
+          <div className="flex justify-center space-x-12 mb-12 opacity-50">
+            <div className="text-center">
+              <div className="text-5xl font-black text-primary dark:text-white mb-2">40+</div>
+              <div className="text-[10px] font-black uppercase tracking-widest">Years of Service</div>
             </div>
-            <h2 className="text-4xl font-black mb-6 tracking-tight">Contributing to Global Neurology</h2>
-            <p className="text-xl text-secondary max-w-3xl mx-auto font-medium opacity-80">
-              Dr. Chowdhury continues to serve on various international advisory boards, shaping the future of headache and stroke medicine globally.
-            </p>
+            <div className="text-center">
+              <div className="text-5xl font-black text-primary dark:text-white mb-2">15+</div>
+              <div className="text-[10px] font-black uppercase tracking-widest">National Awards</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-black text-primary dark:text-white mb-2">100+</div>
+              <div className="text-[10px] font-black uppercase tracking-widest">Publications</div>
+            </div>
+          </div>
+          <h2 className="text-4xl font-black mb-6 tracking-tight">Contributing to Global Neurology</h2>
+          <p className="text-xl text-secondary max-w-3xl mx-auto font-medium opacity-80">
+            Dr. Chowdhury continues to serve on various international advisory boards, shaping the future of headache and stroke medicine globally.
+          </p>
         </div>
       </div>
     </main>

@@ -37,7 +37,7 @@ const Navbar = () => {
     const handleClickOutside = (event: MouseEvent) => {
       const isOutsideDesktop = desktopMenuRef.current && !desktopMenuRef.current.contains(event.target as Node);
       const isOutsideMobile = !mobileMenuRef.current || !mobileMenuRef.current.contains(event.target as Node);
-      
+
       if (isOutsideDesktop && isOutsideMobile) {
         setActiveDropdown(null);
       }
@@ -52,8 +52,8 @@ const Navbar = () => {
     { name: 'Services', href: '/services' },
     { name: 'Academic', href: '/academic' },
     { name: 'Publications', href: '/publications' },
-    { 
-      name: 'Media', 
+    {
+      name: 'Media',
       dropdown: [
         { name: 'All Media', href: '/media' },
         { name: 'TV/Media', href: '/media?category=TV/Media Public Awareness' },
@@ -61,14 +61,14 @@ const Navbar = () => {
         { name: 'Conference Talks', href: '/media?category=Conference Talks' },
       ]
     },
-    { 
-      name: 'More', 
+    {
+      name: 'More',
       dropdown: [
         { name: 'Testimonials', href: '/testimonials' },
         { name: 'Resources', href: '/resources' },
-        { name: 'Awards', href: '/awards' },
+        { name: 'Awards & Honors', href: '/awards' },
         { name: 'For Doctors', href: '/for-doctors' },
-      ] 
+      ]
     },
   ];
 
@@ -77,15 +77,15 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className={`glass px-10 py-4 rounded-full flex items-center justify-between transition-all duration-500 ${scrolled ? 'shadow-md border-white/30 backdrop-blur-3xl' : 'border-white/20 backdrop-blur-2xl'}`}>
           <Link href="/" className="text-2xl flex items-center group">
-            <span className="text-primary font-black tracking-tighter">DR.</span> 
+            <span className="text-primary font-black tracking-tighter">DR.</span>
             <span className="text-accent ml-1.5 font-serif italic font-medium tracking-tight group-hover:text-primary transition-colors">Debashish</span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-12" ref={desktopMenuRef}>
             {navLinks.map((link) => (
-              <div 
-                key={link.name} 
+              <div
+                key={link.name}
                 className="relative group/dropdown"
               >
                 {link.dropdown ? (
@@ -122,7 +122,7 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            
+
             <Link
               href="/contact"
               className="bg-primary text-white px-9 py-3.5 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-accent hover:shadow-lg hover:shadow-accent/20 transition-all ml-4"

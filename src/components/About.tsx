@@ -17,7 +17,6 @@ const About = () => {
   ];
 
   const awards = [
-    { name: 'IAN Presidential Oration', year: '2024' },
     { name: 'Distinguished Alumnus Award, MAMC', year: '2022' },
     { name: 'State Award for Healthcare, Govt. of Delhi', year: '2016' },
     { name: 'Bhagirathi Samman', year: '2013' },

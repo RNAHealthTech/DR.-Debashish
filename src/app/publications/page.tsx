@@ -51,7 +51,7 @@ const PublicationsPage = () => {
             <h1 className="text-5xl lg:text-7xl font-black mb-10 tracking-tighter leading-tight">
               Advancing Science to <span className="text-gradient">Heal</span> the Brain
             </h1>
-            <p className="text-2xl text-secondary font-medium opacity-80 leading-relaxed max-w-2xl">
+            <p className="text-3xl text-secondary font-semibold leading-relaxed max-w-2xl">
               Dr. Chowdhury's research is cited globally, shaping international guidelines for headache management and stroke prevention.
             </p>
           </div>
@@ -75,10 +75,10 @@ const PublicationsPage = () => {
             </h2>
             <button className="text-xs font-black uppercase tracking-widest text-accent hover:underline decoration-2 underline-offset-8">Download Bibliography</button>
           </div>
-          
+
           <div className="grid gap-6">
             {recentPapers.map((paper, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -92,7 +92,7 @@ const PublicationsPage = () => {
                     <span className="text-xs text-secondary font-bold tracking-widest">{paper.year}</span>
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-black leading-tight group-hover:text-accent transition-colors tracking-tight">{paper.title}</h3>
-                  <p className="text-secondary italic mt-4 font-medium opacity-70">{paper.journal}</p>
+                  <p className="text-secondary italic mt-4 font-semibold">{paper.journal}</p>
                 </div>
                 <button className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl">
                   <ExternalLink size={24} />
@@ -103,38 +103,38 @@ const PublicationsPage = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10">
-           <div className="bg-primary p-12 lg:p-20 rounded-[4rem] text-white shadow-2xl relative overflow-hidden group">
-              <Book className="absolute -right-10 top-1/2 -translate-y-1/2 opacity-10 group-hover:scale-110 transition-transform" size={300} />
-              <h3 className="text-4xl font-black mb-8 tracking-tight">Edited Books</h3>
-              <p className="text-lg opacity-70 mb-10 font-medium leading-relaxed">
-                Editor of 9 specialized books on Headache and Neurology, used by medical residents across Asia and Europe.
-              </p>
-              <ul className="space-y-4 mb-12">
-                {["Clinical Neurology", "Headache Management Guide", "Neuro-ophthalmology in Practice"].map((book, i) => (
-                   <li key={i} className="flex items-center space-x-3 text-sm font-bold opacity-90 underline decoration-white/20 underline-offset-4">
-                      <span>{book}</span>
-                   </li>
-                ))}
-              </ul>
-              <button className="bg-accent text-white px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest shadow-2xl hover:scale-105 transition-transform">
-                Browse Publications
-              </button>
-           </div>
+          <div className="bg-primary p-12 lg:p-20 rounded-[4rem] text-white shadow-2xl relative overflow-hidden group">
+            <Book className="absolute -right-10 top-1/2 -translate-y-1/2 opacity-10 group-hover:scale-110 transition-transform" size={300} />
+            <h3 className="text-4xl font-black mb-8 tracking-tight">Edited Books - Snippets</h3>
+            <p className="text-xl font-bold mb-10 leading-relaxed">
+              Editor of 9 specialized books on Headache and Neurology, used by medical residents across Asia and Europe.
+            </p>
+            <ul className="space-y-4 mb-12">
+              {["Clinical Neurology", "Headache Management Guide", "Neuro-ophthalmology in Practice"].map((book, i) => (
+                <li key={i} className="flex items-center space-x-3 text-sm font-bold opacity-90 underline decoration-white/20 underline-offset-4">
+                  <span>{book}</span>
+                </li>
+              ))}
+            </ul>
+            <button className="bg-accent text-white px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest shadow-2xl hover:scale-105 transition-transform">
+              Browse Publications
+            </button>
+          </div>
 
-           <div className="glass p-12 lg:p-20 rounded-[4rem] border border-white/50 shadow-2xl relative overflow-hidden flex flex-col justify-between">
-              <div>
-                <Award className="text-accent mb-10" size={60} />
-                <h3 className="text-3xl font-black mb-8 tracking-tight">International Societies</h3>
-                <p className="text-lg text-secondary opacity-80 mb-10 font-medium leading-relaxed">
-                  Representative for IHS South & Southeast Asia, ensuring regional research is integrated into global consensus papers.
-                </p>
-              </div>
-              <div className="p-8 bg-accent/5 rounded-[2.5rem] border border-accent/10">
-                <p className="text-sm font-black text-accent uppercase tracking-widest leading-loose">
-                  "Research is not just data, it is a roadmap for clinicians to provide hope to patients with incurable conditions."
-                </p>
-              </div>
-           </div>
+          <div className="glass p-12 lg:p-20 rounded-[4rem] border border-white/50 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+            <div>
+              <Award className="text-accent mb-10" size={60} />
+              <h3 className="text-3xl font-black mb-8 tracking-tight">International Societies</h3>
+              <p className="text-xl text-secondary mb-10 font-bold leading-relaxed">
+                Representative for IHS South & Southeast Asia, ensuring regional research is integrated into global consensus papers.
+              </p>
+            </div>
+            <div className="p-8 bg-accent/5 rounded-[2.5rem] border border-accent/10">
+              <p className="text-sm font-black text-accent uppercase tracking-widest leading-loose">
+                "Research is not just data, it is a roadmap for clinicians to provide hope to patients with incurable conditions."
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </main>

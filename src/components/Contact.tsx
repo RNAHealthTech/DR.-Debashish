@@ -39,7 +39,7 @@ Email: ${email}
 Service: ${service}
 Message: ${message}`;
         
-        const whatsappUrl = `https://wa.me/918595814946?text=${encodeURIComponent(whatsappText)}`;
+        const whatsappUrl = `https://wa.me/919217707822?text=${encodeURIComponent(whatsappText)}`;
         window.open(whatsappUrl, '_blank');
         
         form.reset();
