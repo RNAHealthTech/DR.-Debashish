@@ -154,7 +154,7 @@ const Navbar = () => {
                       <>
                         <button
                           onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                          className="flex items-center justify-between text-lg font-black tracking-tight"
+                          className="flex items-center justify-between text-lg font-black tracking-tight text-primary hover:text-accent transition-colors"
                         >
                           <span>{link.name}</span>
                           <ChevronDown size={20} className={activeDropdown === link.name ? 'rotate-180' : ''} />
@@ -165,7 +165,7 @@ const Navbar = () => {
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className="text-sm font-bold text-secondary hover:text-accent"
+                                className="text-sm font-bold text-primary hover:text-accent transition-colors"
                                 onClick={() => setIsOpen(false)}
                               >
                                 {subItem.name}
@@ -177,7 +177,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-lg font-black tracking-tight"
+                        className="text-lg font-black tracking-tight text-primary hover:text-accent transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
                         {link.name}
@@ -188,7 +188,7 @@ const Navbar = () => {
                 <div className="pt-6 border-t border-white/10">
                   <Link
                     href="/contact"
-                    className="block w-full bg-accent text-white text-center py-5 rounded-3xl font-black uppercase tracking-widest text-xs shadow-xl shadow-accent/20"
+                    className="block w-full bg-primary text-white text-center py-5 rounded-3xl font-black uppercase tracking-widest text-xs hover:bg-accent hover:shadow-xl hover:shadow-accent/20 transition-all"
                     onClick={() => setIsOpen(false)}
                   >
                     Consult
