@@ -49,8 +49,47 @@ Message: ${message}`;
       setStatus('error');
     }
   };
+  const contactJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Dr. Debashish Chowdhury | Book Appointment",
+    "description": "Book a clinical consultation with Dr. Debashish Chowdhury. Get address, clinic timings, contact number, and direct inquiry form details.",
+    "url": "https://headachespecialistindia.com/contact",
+    "mainEntity": {
+      "@type": "Physician",
+      "name": "Dr. Debashish Chowdhury",
+      "telephone": "+91-92177-07822",
+      "image": "https://headachespecialistindia.com/images/dr/portrait.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Radha Soami Satsang, Rajinder Nagar",
+        "addressLocality": "New Delhi",
+        "addressRegion": "Delhi",
+        "postalCode": "110005",
+        "addressCountry": "IN"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+  };
+
   return (
     <main className="pt-32 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
+      />
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-24">
           <div className="inline-flex items-center space-x-2 bg-accent/5 px-4 py-2 rounded-full mb-8">

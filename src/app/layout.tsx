@@ -65,14 +65,32 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Physician",
   "name": "Dr. Debashish Chowdhury",
-  "image": "https://drdebashish.com/images/dr/portrait.jpg",
-  "url": "https://drdebashish.com",
+  "image": "https://headachespecialistindia.com/images/dr/portrait.jpg",
+  "url": "https://headachespecialistindia.com",
   "telephone": "+91-92177-07822",
   "jobTitle": "Vice Chairman & Academic Head – Neurology",
-  "medicalSpecialty": ["Neurology", "Headache Medicine", "Stroke Medicine"],
+  "logo": "https://headachespecialistindia.com/images/dr/portrait.jpg",
+  "priceRange": "$$",
+  "medicalSpecialty": [
+    "Neurology",
+    "HeadacheMedicine",
+    "StrokeMedicine"
+  ],
+  "knowsAbout": [
+    "Neurology",
+    "Headache",
+    "Migraine",
+    "Stroke",
+    "Epilepsy",
+    "Vertigo",
+    "Dizziness",
+    "Alzheimer's Disease",
+    "Parkinson's Disease"
+  ],
   "worksFor": {
     "@type": "Hospital",
-    "name": "BLK-Max Super Speciality Hospital"
+    "name": "BLK-Max Super Speciality Hospital",
+    "url": "https://www.blkmaxhospital.com"
   },
   "address": {
     "@type": "PostalAddress",
@@ -81,7 +99,81 @@ const jsonLd = {
     "addressRegion": "Delhi",
     "postalCode": "110005",
     "addressCountry": "IN"
-  }
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.blkmaxhospital.com/doctor/debashish-chowdhury",
+    "https://scholar.google.com/citations?user=DrDebashishChowdhury"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "4",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Rajesh Kumar"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Dr. Chowdhury's approach changed my life. I had been suffering for 15 years, and his specialized headache clinic provided the breakthrough I needed."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Williams"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Exceptional care and empathy. The team's expertise in stroke rehabilitation and Dr. Chowdhury's guidance were instrumental in my recovery journey."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Amitabh Gupta"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Highly professional and knowledgeable. He takes the time to explain the condition and the rationale behind the treatment plan."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Meena Devi"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "The best neurologist in Delhi. His clinical insight is unmatched, and he treats patients with immense respect and care."
+    }
+  ]
 };
 
 import Navbar from "@/components/Navbar";

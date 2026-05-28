@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact & Appointments",
-  description: "Consult Dr. Debashish Chowdhury at BLK-Max Super Speciality Hospital, New Delhi. Get contact details and book your neurology consultation today.",
+  title: "Contact Dr. Debashish Chowdhury | Book Neurology Appointment Delhi",
+  description: "Book a consultation with Dr. Debashish Chowdhury at BLK-Max Hospital, New Delhi. Find clinic location address, timing, phone number, and direct inquiry form.",
+  keywords: [
+    "book neurologist appointment Delhi",
+    "Dr. Debashish Chowdhury contact",
+    "headache doctor near Karol Bagh Delhi",
+    "neurology clinic Karol Bagh",
+    "OPD clinic Pusa Road"
+  ]
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

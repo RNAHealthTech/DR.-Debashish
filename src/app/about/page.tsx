@@ -43,9 +43,60 @@ const AboutPage = () => {
     "Indian Epilepsy Society (IES)",
     "National Medical Commission (NMC)",
   ];
+  const aboutJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Dr. (Prof.) Debashish Chowdhury",
+    "description": "Learn about Dr. Debashish Chowdhury's academic credentials, teaching experience, and leadership roles in global neurology.",
+    "url": "https://headachespecialistindia.com/about",
+    "mainEntity": {
+      "@type": "Physician",
+      "name": "Dr. Debashish Chowdhury",
+      "telephone": "+91-92177-07822",
+      "image": "https://headachespecialistindia.com/images/dr/portrait.jpg",
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Maulana Azad Medical College"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "G.B. Pant Hospital"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Trinity College, Cambridge University"
+        }
+      ],
+      "award": [
+        "Distinguished Alumnus Award, Maulana Azad Medical College (2022)",
+        "State Award for Healthcare, Government of Delhi (2016)",
+        "Bhagirathi Samman (2013)",
+        "Indira Gandhi Appreciation Award (2006)"
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "American Academy of Neurology (AAN)"
+        },
+        {
+          "@type": "Organization",
+          "name": "International Headache Society (IHS)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Indian Academy of Neurology (IAN)"
+        }
+      ]
+    }
+  };
 
   return (
     <main className="pt-32 pb-20 overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
+      />
       <div className="container mx-auto px-6">
         {/* Intro Section */}
         <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">

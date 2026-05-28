@@ -32,9 +32,42 @@ const ServiceDetailPage = () => {
       </div>
     );
   }
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": `${service.title} Treatment in Karol Bagh, Delhi | Dr. Debashish Chowdhury`,
+    "description": service.shortDesc,
+    "url": `https://headachespecialistindia.com/services/${service.id}`,
+    "about": {
+      "@type": "MedicalCondition",
+      "name": service.title,
+      "possibleTreatment": service.features.map(feature => ({
+        "@type": "MedicalTherapy",
+        "name": feature
+      }))
+    },
+    "mainEntity": {
+      "@type": "Physician",
+      "name": "Dr. Debashish Chowdhury",
+      "telephone": "+91-92177-07822",
+      "image": "https://headachespecialistindia.com/images/dr/portrait.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Radha Soami Satsang, Rajinder Nagar",
+        "addressLocality": "New Delhi",
+        "addressRegion": "Delhi",
+        "postalCode": "110005",
+        "addressCountry": "IN"
+      }
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <Navbar />
       
       <main className="pt-32 pb-24">
