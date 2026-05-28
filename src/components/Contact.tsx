@@ -76,7 +76,7 @@ Message: ${message}`;
                   <div>
                     <h4 className="font-bold text-lg mb-1">BLK-Max Hospital</h4>
                     <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-                      Pusa Road, New Delhi - 110005, India
+                      Room No. 64, Ground Floor, OPD 14, Pusa Rd, Radha Soami Satsang, Rajinder Nagar, New Delhi, Delhi, 110005
                     </p>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ Message: ${message}`;
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">Direct Inquiries</h4>
-                    <p className="text-white/60 text-base mb-1">011-3040 3040</p>
+                    <p className="text-white/60 text-base mb-1">+91 92177 07822</p>
                     <p className="text-white/30 text-[11px] uppercase tracking-wider">Professional Referrals & Appointments</p>
                   </div>
                 </div>

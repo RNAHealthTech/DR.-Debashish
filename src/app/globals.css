@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #FCFCFD;
-  --foreground: #09090B; /* Darker near-black */
-  --primary: #000000; /* Pure black for highest contrast */
-  --secondary: #1E293B; /* Darker Slate for better readability */
-  --accent: #1E40AF; /* Deeper Professional Medical Blue */
-  --muted: #F8FAFC;
+  --background: #FAF9F6; /* Soft Alabaster */
+  --foreground: #2E221E; /* Warm Charcoal */
+  --primary: #211B19; /* Midnight Espresso */
+  --secondary: #61514C; /* Muted Gray-Brown */
+  --accent: #A27668; /* Terracotta */
+  --muted: #EBE5DF; /* Warm Tan */
   --card: #FFFFFF;
-  --border: #E2E8F0;
+  --border: #E5E7E2; /* Sage Green used as subtle border */
+  --hero-bg: #F4F0EB; /* Warm Cream */
+  
   --font-serif: var(--font-serif);
-  --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  --font-sans: var(--font-outfit);
 }
 
 @theme inline {
@@ -22,22 +26,9 @@
   --color-muted: var(--muted);
   --color-card: var(--card);
   --color-border: var(--border);
-  --font-sans: var(--font-outfit);
+  --color-hero-bg: var(--hero-bg);
+  --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
-  --font-mono: var(--font-inter);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f172a;
-    --foreground: #F8FAFC;
-    --primary: #F8FAFC;
-    --secondary: #94A3B8;
-    --accent: #818CF8;
-    --lavender: #1E1B4B;
-    --card: #1E293B;
-    --border: #334155;
-  }
 }
 
 body {
@@ -45,6 +36,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Custom Scrollbar */
@@ -58,70 +50,35 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(30, 64, 175, 0.3); /* Accent color with opacity */
+  background: var(--accent);
   border-radius: 10px;
+  opacity: 0.5;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(30, 64, 175, 0.6);
+  background: #8e6558;
 }
 
 /* Selection Highlight */
 ::selection {
-  background: rgba(30, 64, 175, 0.2);
-  color: inherit;
+  background: rgba(162, 118, 104, 0.2);
+  color: var(--primary);
 }
 
 @layer utilities {
   .glass {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-  }
-
-  .dark .glass {
-    background: rgba(30, 41, 59, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-400;
+    @apply text-accent;
   }
 
-  .dark .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-blue-300 to-sky-200;
-  }
-
-  .noise-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0.04;
-    background-image: var(--noise);
-  }
-
-  .mesh-gradient {
-    background-color: #f8fafc;
-    background-image: 
-      radial-gradient(at 0% 0%, hsla(210, 100%, 85%, 0.4) 0px, transparent 50%),
-      radial-gradient(at 50% 0%, hsla(260, 100%, 85%, 0.3) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(190, 100%, 85%, 0.4) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, hsla(220, 100%, 92%, 0.5) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(230, 100%, 88%, 0.4) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(260, 100%, 85%, 0.3) 0px, transparent 50%);
-  }
-
-  .dark .mesh-gradient {
-    background-color: #0f172a;
-    background-image: 
-      radial-gradient(at 0% 0%, hsla(210, 100%, 35%, 0.4) 0px, transparent 50%),
-      radial-gradient(at 50% 0%, hsla(260, 100%, 35%, 0.3) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(190, 100%, 35%, 0.4) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, hsla(220, 100%, 25%, 0.5) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(230, 100%, 30%, 0.4) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(260, 100%, 35%, 0.3) 0px, transparent 50%);
+  .stucco-bg {
+    background-color: var(--hero-bg);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
   }
 }

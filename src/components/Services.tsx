@@ -32,7 +32,7 @@ const Services = () => {
               className="h-full"
             >
               <TiltCard className="h-full">
-                <Link href={`/services/${item.id}`} className="block h-full p-10 rounded-[2.5rem] bg-white/60 dark:bg-card/40 backdrop-blur-xl border border-white/40 dark:border-white/10 group hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500">
+                <Link href={`/services/${item.id}`} className="block h-full p-10 rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-white/40 group hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500">
                   <div className="w-16 h-16 rounded-[1.5rem] bg-accent/10 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-accent group-hover:to-primary group-hover:text-white transition-all duration-500 shadow-sm">
                     <item.icon size={32} />
                   </div>

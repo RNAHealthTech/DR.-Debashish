@@ -11,18 +11,6 @@ const AcademicPage = () => {
       event: "IANCON 2024",
       location: "Madurai, India",
       date: "2024"
-    },
-    {
-      title: "Recent Advances in Migraine Therapeutics",
-      event: "World Congress of Neurology",
-      location: "Dubai, UAE",
-      date: "2023"
-    },
-    {
-      title: "Approach to Refractory Chronic Migraine",
-      event: "International Headache Congress",
-      location: "Seoul, South Korea",
-      date: "2023"
     }
   ];
 

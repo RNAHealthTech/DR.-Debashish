@@ -38,7 +38,7 @@ const FloatingWidgets = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.5, y: 20 }}
             onClick={scrollToTop}
-            className="w-12 h-12 bg-white/80 dark:bg-primary/80 backdrop-blur-md border border-border text-primary dark:text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all group"
+            className="w-12 h-12 bg-white/80 backdrop-blur-md border border-border text-primary rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all group"
             aria-label="Scroll to top"
           >
             <ArrowUp size={20} className="group-hover:-translate-y-1 transition-transform" />

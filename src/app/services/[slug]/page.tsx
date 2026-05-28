@@ -109,7 +109,7 @@ const ServiceDetailPage = () => {
                       <Phone size={20} className="text-accent" />
                       <span className="font-bold text-sm uppercase tracking-widest">Direct Contact</span>
                     </div>
-                    <p className="text-2xl font-bold tracking-tight">+91 11-30403040</p>
+                    <p className="text-2xl font-bold tracking-tight">+91 92177 07822</p>
                     <p className="text-xs text-white/40 mt-2 font-medium">Extension: Neurology Department</p>
                   </div>
                 </div>

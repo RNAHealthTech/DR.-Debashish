@@ -67,7 +67,7 @@ const jsonLd = {
   "name": "Dr. Debashish Chowdhury",
   "image": "https://drdebashish.com/images/dr/portrait.jpg",
   "url": "https://drdebashish.com",
-  "telephone": "+91-11-30403040",
+  "telephone": "+91-92177-07822",
   "jobTitle": "Vice Chairman & Academic Head – Neurology",
   "medicalSpecialty": ["Neurology", "Headache Medicine", "Stroke Medicine"],
   "worksFor": {
@@ -76,8 +76,9 @@ const jsonLd = {
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Pusa Road, Rajinder Nagar",
+    "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Radha Soami Satsang, Rajinder Nagar",
     "addressLocality": "New Delhi",
+    "addressRegion": "Delhi",
     "postalCode": "110005",
     "addressCountry": "IN"
   }
@@ -85,7 +86,6 @@ const jsonLd = {
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingBlobs from "@/components/FloatingBlobs";
 import CustomCursor from "@/components/CustomCursor";
 import ProgressBar from "@/components/ProgressBar";
 import FloatingWidgets from "@/components/FloatingWidgets";
@@ -97,14 +97,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable} ${ebGaramond.variable} scroll-smooth`}>
-      <body className="font-outfit antialiased selection:bg-accent/20 bg-background text-foreground relative min-h-screen mesh-gradient">
+      <body className="font-outfit antialiased selection:bg-accent/20 bg-background text-foreground relative min-h-screen">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <CustomCursor />
         <ProgressBar />
-        <FloatingBlobs />
         <Navbar />
         {children}
         <FloatingWidgets />

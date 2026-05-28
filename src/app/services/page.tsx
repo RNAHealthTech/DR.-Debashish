@@ -200,8 +200,8 @@ const ServicesPage = () => {
         <div className="mt-40 grid lg:grid-cols-3 gap-8">
           {[
             { icon: <Clock />, title: "Clinic Hours", detail: "Mon - Sat: 9:00 AM - 6:00 PM" },
-            { icon: <MapPin />, title: "Location", detail: "Delhi Neurological Association, ND" },
-            { icon: <Phone />, title: "Appointments", detail: "+91 11 2323 1234" }
+            { icon: <MapPin />, title: "Location", detail: "Room No. 64, OPD 14, Radha Soami Satsang, New Delhi" },
+            { icon: <Phone />, title: "Appointments", detail: "+91 92177 07822" }
           ].map((item, i) => (
             <div key={i} className="flex items-center space-x-6 p-8 rounded-[2.5rem] bg-primary/5 dark:bg-white/5 border border-primary/5">
               <div className="text-accent">{item.icon}</div>

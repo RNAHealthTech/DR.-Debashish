@@ -9,7 +9,7 @@ import MagneticButton from '@/components/MagneticButton';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-32 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center pt-32 pb-20 overflow-hidden bg-hero-bg">
       <div className="container mx-auto px-6 lg:px-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div

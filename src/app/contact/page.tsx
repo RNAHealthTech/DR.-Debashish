@@ -81,8 +81,9 @@ Message: ${message}`;
                 <div>
                   <h4 className="text-sm font-black uppercase tracking-[0.2em] text-accent mb-2">Location</h4>
                   <p className="text-xl font-bold text-primary leading-snug">
-                    Delhi Neurological Association, <br />
-                    Pusa Road, Rajinder Nagar, New Delhi, 110005
+                    Room No. 64, Ground Floor, OPD 14, <br />
+                    Pusa Rd, Radha Soami Satsang, <br />
+                    Rajinder Nagar, New Delhi, Delhi, 110005
                   </p>
                 </div>
               </div>
@@ -107,7 +108,7 @@ Message: ${message}`;
                 <div>
                   <h4 className="text-sm font-black uppercase tracking-[0.2em] text-primary mb-2">Contact</h4>
                   <p className="text-xl font-bold text-primary leading-snug">
-                    +91-11-30403040 <br />
+                    +91 92177 07822 <br />
                     <span className="text-lg font-bold text-primary">appointments@drdebashish.com</span>
                   </p>
                 </div>

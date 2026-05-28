@@ -25,11 +25,6 @@ const AboutPage = () => {
       title: "President",
       org: "Indian Academy of Neurology (IAN)",
       period: "2023 - 2024",
-    },
-    {
-      title: "Executive Committee Member",
-      org: "International Headache Society (IHS)",
-      period: "Global Leadership",
     }
   ];
 
@@ -166,7 +161,7 @@ const AboutPage = () => {
                 "He is adored by his students for his teaching skills and analytical mind",
                 "Has been instrumental in revamping the DM Neurology Course at GIPMER",
                 "Started the first Comprehensive Stroke unit in a Government Hospital in North India",
-                "Runs a Headache Clinic with more than 12000 patients enrolled",
+                "Runs a Headache Clinic in a tertiary care academic setup with more than 12000 patients enrolled",
                 "Started the first Headache Fellowship in India"
               ].map((item, i) => (
                 <div key={i} className="flex items-start space-x-3 text-sm font-bold text-secondary bg-primary/5 dark:bg-white/5 p-4 rounded-2xl">
