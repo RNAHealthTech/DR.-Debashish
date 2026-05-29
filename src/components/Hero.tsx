@@ -34,7 +34,7 @@ const Hero = () => {
               className="inline-flex items-center space-x-3 bg-white/60 backdrop-blur-md px-5 py-2.5 rounded-full mb-10 border border-primary/10 shadow-sm"
             >
               <Award size={14} className="text-primary" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Director & HOD – Neurology</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Vice chairman & Academic Head</span>
             </motion.div>
 
             <motion.h1
