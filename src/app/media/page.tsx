@@ -77,6 +77,46 @@ const MediaContent = () => {
       category: "Patient Counseling"
     },
     {
+      title: "DD Morning Show | Tackling Spinal Compression | Dr. Mohit Agrawal & Dr. Debashish Chowdhury",
+      duration: "15:40",
+      url: "https://www.youtube.com/watch?v=KAUIBUkH_ls",
+      thumbnail: "https://img.youtube.com/vi/KAUIBUkH_ls/maxresdefault.jpg",
+      platform: "YouTube",
+      category: "TV/Media Public Awareness"
+    },
+    {
+      title: "DD Morning Show | Mental Health | Autism: A World Full of Possibilities",
+      duration: "12:15",
+      url: "https://www.youtube.com/watch?v=25oEXusgcpA",
+      thumbnail: "https://img.youtube.com/vi/25oEXusgcpA/maxresdefault.jpg",
+      platform: "YouTube",
+      category: "TV/Media Public Awareness"
+    },
+    {
+      title: "DD Morning Show | Hello Doctor | Parkinson's disease | Dr. Roopa Rajan & Dr. Debashish Chowdhury",
+      duration: "25:10",
+      url: "https://www.youtube.com/watch?v=xcY1Ju3ElWg",
+      thumbnail: "https://img.youtube.com/vi/xcY1Ju3ElWg/maxresdefault.jpg",
+      platform: "YouTube",
+      category: "TV/Media Public Awareness"
+    },
+    {
+      title: "DD Morning Show | Hello Doctor | Spine Health | Dr. Debashish Chowdhury & Dr. Shashank Sharad Kale",
+      duration: "26:45",
+      url: "https://www.youtube.com/watch?v=rZSDqb3ypaQ",
+      thumbnail: "https://img.youtube.com/vi/rZSDqb3ypaQ/maxresdefault.jpg",
+      platform: "YouTube",
+      category: "TV/Media Public Awareness"
+    },
+    {
+      title: "DD Morning Show | Featured Discussion (Private Video)",
+      duration: "Upcoming",
+      url: "https://www.youtube.com/watch?v=mfEsmuO6cTo",
+      thumbnail: "https://img.youtube.com/vi/mfEsmuO6cTo/maxresdefault.jpg",
+      platform: "YouTube",
+      category: "TV/Media Public Awareness"
+    },
+    {
       title: "Good Evening India I Prevention of Headache & Migraine",
       duration: "24:15",
       url: "https://www.youtube.com/watch?v=NbzRd2VXgKM",
