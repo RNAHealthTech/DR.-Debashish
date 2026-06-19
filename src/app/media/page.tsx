@@ -69,6 +69,14 @@ const MediaContent = () => {
 
   const videos = [
     {
+      title: "World Parkinson's Day: Disease Awareness & Prevention | ETV Bharat",
+      duration: "09:08",
+      url: "https://www.dailymotion.com/video/xa568o8",
+      thumbnail: "https://s1.dmcdn.net/v/aZlve1fslLZ7QiZNR",
+      platform: "Dailymotion",
+      category: "TV/Media Public Awareness"
+    },
+    {
       title: "Stroke: Recognise the Signs and Act Fast | BLK-Max Hospital",
       duration: "05:24",
       url: "https://www.youtube.com/watch?v=90QaraGGL0c",
@@ -264,7 +272,11 @@ const MediaContent = () => {
                   </div>
                   <div className="absolute bottom-6 right-6">
                     <div className="flex items-center space-x-2 bg-black/50 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-black">
-                      <YoutubeIcon size={12} className="text-red-500" />
+                      {video.platform === "YouTube" ? (
+                        <YoutubeIcon size={12} className="text-red-500" />
+                      ) : (
+                        <Video size={12} className="text-blue-400" />
+                      )}
                       <span>{video.platform}</span>
                     </div>
                   </div>
