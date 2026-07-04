@@ -94,7 +94,7 @@ const jsonLd = {
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Radha Soami Satsang, Rajinder Nagar",
+    "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Rajinder Nagar",
     "addressLocality": "New Delhi",
     "addressRegion": "Delhi",
     "postalCode": "110005",
@@ -111,7 +111,7 @@ const jsonLd = {
       "Saturday"
     ],
     "opens": "09:00",
-    "closes": "18:00"
+    "closes": "16:30"
   },
   "sameAs": [
     "https://www.blkmaxhospital.com/doctor/debashish-chowdhury",

@@ -53,7 +53,7 @@ const ServiceDetailPage = () => {
       "image": "https://headachespecialistindia.com/images/dr/portrait.jpg",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Radha Soami Satsang, Rajinder Nagar",
+        "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Rajinder Nagar",
         "addressLocality": "New Delhi",
         "addressRegion": "Delhi",
         "postalCode": "110005",

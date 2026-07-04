@@ -62,7 +62,7 @@ Message: ${message}`;
       "image": "https://headachespecialistindia.com/images/dr/portrait.jpg",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Radha Soami Satsang, Rajinder Nagar",
+        "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Rajinder Nagar",
         "addressLocality": "New Delhi",
         "addressRegion": "Delhi",
         "postalCode": "110005",
@@ -79,7 +79,7 @@ Message: ${message}`;
           "Saturday"
         ],
         "opens": "09:00",
-        "closes": "18:00"
+        "closes": "16:30"
       }
     }
   };
@@ -121,8 +121,8 @@ Message: ${message}`;
                   <h4 className="text-sm font-black uppercase tracking-[0.2em] text-accent mb-2">Location</h4>
                   <p className="text-xl font-bold text-primary leading-snug">
                     Room No. 64, Ground Floor, OPD 14, <br />
-                    Pusa Rd, Radha Soami Satsang, <br />
-                    Rajinder Nagar, New Delhi, Delhi, 110005
+                    Pusa Rd, Rajinder Nagar, <br />
+                    New Delhi, Delhi, 110005
                   </p>
                 </div>
               </div>

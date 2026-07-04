@@ -76,7 +76,7 @@ Message: ${message}`;
                   <div>
                     <h4 className="font-bold text-lg mb-1">BLK-Max Hospital</h4>
                     <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-                      Room No. 64, Ground Floor, OPD 14, Pusa Rd, Radha Soami Satsang, Rajinder Nagar, New Delhi, Delhi, 110005
+                      Room No. 64, Ground Floor, OPD 14, Pusa Rd, Rajinder Nagar, New Delhi, Delhi, 110005
                     </p>
                   </div>
                 </div>
@@ -89,6 +89,17 @@ Message: ${message}`;
                     <h4 className="font-bold text-lg mb-1">Direct Inquiries</h4>
                     <p className="text-white/60 text-base mb-1">+91 92177 07822</p>
                     <p className="text-white/30 text-[11px] uppercase tracking-wider">Professional Referrals & Appointments</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-accent">
+                    <Clock size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-1">Clinic Timings</h4>
+                    <p className="text-white/60 text-sm">Mon - Fri: 9:00 AM - 4:30 PM</p>
+                    <p className="text-white/60 text-sm">Saturday: 9:00 AM - 12:30 PM</p>
                   </div>
                 </div>
 

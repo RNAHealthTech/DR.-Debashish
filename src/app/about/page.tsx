@@ -25,6 +25,21 @@ const AboutPage = () => {
       title: "President",
       org: "Indian Academy of Neurology (IAN)",
       period: "2023 - 2024",
+    },
+    {
+      title: "President",
+      org: "Headache Society of India",
+      period: "2026 - 2027",
+    },
+    {
+      title: "President",
+      org: "Delhi Neurological Association (DNA)",
+      period: "2022 - 2023",
+    },
+    {
+      title: "Chair Academic",
+      org: "G.B. Pant Hospital",
+      period: "2021 - 2025",
     }
   ];
 
@@ -33,6 +48,7 @@ const AboutPage = () => {
     { title: "State Award for Healthcare", org: "Government of Delhi", year: "2016" },
     { title: "Bhagirathi Samman", org: "Bhagirathi Samajik Saanskritik Manch", year: "2013" },
     { title: "Indira Gandhi Appreciation Award", org: "National Medical Forum", year: "2006" },
+    { title: "WHO Fellowship", org: "World Health Organization", year: "" },
   ];
 
   const memberships = [
@@ -40,8 +56,7 @@ const AboutPage = () => {
     "International Headache Society (IHS)",
     "Neurological Society of India (NSI)",
     "Indian Academy of Neurology (Life Member)",
-    "Indian Epilepsy Society (IES)",
-    "National Medical Commission (NMC)",
+    "Association of Physicians of India (API)",
   ];
   const aboutJsonLd = {
     "@context": "https://schema.org",
@@ -172,6 +187,10 @@ const AboutPage = () => {
                 <div className="w-1 bg-accent/20 rounded-full h-auto"></div>
                 <div className="space-y-6">
                   <div>
+                    <h4 className="font-black text-primary dark:text-white">Commonwealth Fellowship in Neurology</h4>
+                    <p className="text-sm text-secondary font-medium italic">London, UK</p>
+                  </div>
+                  <div>
                     <h4 className="font-black text-primary dark:text-white">Fellowship in Stroke Medicine</h4>
                     <p className="text-sm text-secondary font-medium italic">Edinburgh, UK, 2003</p>
                   </div>
@@ -213,14 +232,18 @@ const AboutPage = () => {
                 "Has been instrumental in revamping the DM Neurology Course at GIPMER",
                 "Started the first Comprehensive Stroke unit in a Government Hospital in North India",
                 "Runs a Headache Clinic in a tertiary care academic setup with more than 12000 patients enrolled",
-                "Started the first Headache Fellowship in India"
+                "Started the first Headache Fellowship in India",
+                "Served at Vallabhbhai Patel Chest Institute (VPCI)"
               ].map((item, i) => (
                 <div key={i} className="flex items-start space-x-3 text-sm font-bold text-secondary bg-primary/5 dark:bg-white/5 p-4 rounded-2xl">
                   <CheckCircle2 size={18} className="text-accent shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </div>
               ))}
-            </div>
+              </div>
+              <div className="mt-8 flex gap-4">
+                <a href="/academic/dissertations" className="text-xs font-bold text-accent uppercase tracking-widest hover:underline">View Dissertation List &rarr;</a>
+              </div>
           </section>
 
           <section>
@@ -241,6 +264,10 @@ const AboutPage = () => {
                   <span>{item}</span>
                 </div>
               ))}
+            </div>
+            <div className="mt-8 flex gap-4">
+               <a href="/academic/orations" className="text-xs font-bold text-accent uppercase tracking-widest hover:underline">View Oration List &rarr;</a>
+               <a href="/academic/conferences" className="text-xs font-bold text-accent uppercase tracking-widest hover:underline">View Conferences Organised &rarr;</a>
             </div>
           </section>
         </div>

@@ -59,7 +59,7 @@ export const services = [
   },
   {
     id: 'alzheimers-care',
-    title: 'Alzheimer’s Care',
+    title: 'Alzheimer’s Disease & Other Dementias',
     shortDesc: 'Compassionate, holistic, and integrated management for Alzheimer’s disease and other dementias.',
     icon: ShieldCheck,
     fullDesc: `Memory loss and cognitive decline require a specialized and compassionate approach. We provide comprehensive dementia care.

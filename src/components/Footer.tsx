@@ -29,7 +29,7 @@ const Footer = () => {
             <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-primary mb-6">Location</h4>
             <p className="text-base text-primary font-bold leading-relaxed">
               Room No. 64, Ground Floor, OPD 14,<br />
-              Pusa Rd, Radha Soami Satsang, Rajinder Nagar,<br />
+              Pusa Rd, Rajinder Nagar,<br />
               New Delhi, Delhi, 110005
             </p>
           </div>

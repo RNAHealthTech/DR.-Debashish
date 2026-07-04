@@ -13,7 +13,7 @@ const ResourcesPage = () => {
       category: "Headache"
     },
     {
-      title: "FAST: Stroke Warning Signs",
+      title: "BE FAST: Stroke Warning Signs",
       type: "Infographic",
       size: "800 KB",
       category: "Emergency"
