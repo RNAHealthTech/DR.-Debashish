@@ -11,6 +11,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
+  const url = `https://headachespecialistindia.com/services/${slug}`;
+
   // Custom tailored metadata for Resistant Migraine as per SEO report
   if (slug === 'resistant-migraine') {
     return {
@@ -25,6 +27,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         'headache specialist Delhi',
         'Dr. Debashish Chowdhury',
       ],
+      alternates: { canonical: url },
+      openGraph: {
+        title: 'Resistant Migraine Treatment in Karol Bagh, Delhi',
+        description: 'Dr. Debashish Chowdhury offers advanced resistant migraine treatment in Karol Bagh, Delhi.',
+        url,
+      },
+      twitter: {
+        title: 'Resistant Migraine Treatment in Karol Bagh, Delhi',
+        description: 'Dr. Debashish Chowdhury offers advanced resistant migraine treatment in Karol Bagh, Delhi.',
+      },
     };
   }
 
@@ -43,6 +55,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title,
     description,
     keywords,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
   };
 }
 

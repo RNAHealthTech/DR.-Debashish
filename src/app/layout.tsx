@@ -17,12 +17,25 @@ const ebGaramond = EB_Garamond({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  themeColor: '#0a0f1c',
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://headachespecialistindia.com'),
   title: {
     default: "Dr. Debashish Chowdhury | Best Headache Specialist & Neurologist in Karol Bagh, Delhi, India",
     template: "%s | Dr. Debashish Chowdhury"
   },
   description: "Consult Dr. Debashish Chowdhury, a leading headache specialist and neurologist at BLK-Max Hospital in Karol Bagh, Delhi. Expert care for migraine, stroke, epilepsy, and neurodegenerative disorders across India.",
+  alternates: {
+    canonical: '/',
+  },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    title: 'Dr. Debashish Chowdhury',
+    statusBarStyle: 'default',
+  },
   keywords: ["Dr. Debashish Chowdhury", "headache specialist", "neurologist", "migraine treatment", "stroke specialist", "epilepsy care", "Alzheimer's care", "neurodegenerative disorders", "Karol Bagh", "Delhi", "India", "BLK-Max Hospital"],
   authors: [{ name: "Dr. Debashish Chowdhury" }],
   creator: "Dr. Debashish Chowdhury",
@@ -63,19 +76,76 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Physician",
-  "name": "Dr. Debashish Chowdhury",
-  "image": "https://headachespecialistindia.com/images/dr/portrait.jpg",
-  "url": "https://headachespecialistindia.com",
-  "telephone": "+91-92177-07822",
-  "jobTitle": "Vice Chairman & Academic Head – Neurology",
-  "logo": "https://headachespecialistindia.com/images/dr/portrait.jpg",
-  "priceRange": "$$",
-  "medicalSpecialty": [
-    "Neurology",
-    "HeadacheMedicine",
-    "StrokeMedicine"
-  ],
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://headachespecialistindia.com/#website",
+      "url": "https://headachespecialistindia.com/",
+      "name": "Dr. Debashish Chowdhury",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://headachespecialistindia.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://headachespecialistindia.com/#clinic",
+      "name": "Dr. Debashish Chowdhury Neurology Clinic",
+      "image": "https://headachespecialistindia.com/images/dr/portrait.jpg",
+      "url": "https://headachespecialistindia.com",
+      "telephone": "+91-92177-07822",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Room No. 64, Ground Floor, OPD 14, Pusa Rd, Rajinder Nagar",
+        "addressLocality": "New Delhi",
+        "addressRegion": "Delhi",
+        "postalCode": "110005",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://headachespecialistindia.com/#organization",
+      "name": "Dr. Debashish Chowdhury",
+      "url": "https://headachespecialistindia.com",
+      "logo": "https://headachespecialistindia.com/images/dr/portrait.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-92177-07822",
+        "contactType": "customer service"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://headachespecialistindia.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://headachespecialistindia.com/"
+        }
+      ]
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://headachespecialistindia.com/#physician",
+      "name": "Dr. Debashish Chowdhury",
+      "image": "https://headachespecialistindia.com/images/dr/portrait.jpg",
+      "url": "https://headachespecialistindia.com",
+      "telephone": "+91-92177-07822",
+      "jobTitle": "Vice Chairman & Academic Head – Neurology",
+      "logo": "https://headachespecialistindia.com/images/dr/portrait.jpg",
+      "priceRange": "$$",
+      "medicalSpecialty": [
+        "Neurology",
+        "HeadacheMedicine",
+        "StrokeMedicine"
+      ],
   "knowsAbout": [
     "Neurology",
     "Headache",
@@ -172,6 +242,8 @@ const jsonLd = {
         "ratingValue": "5"
       },
       "reviewBody": "The best neurologist in Delhi. His clinical insight is unmatched, and he treats patients with immense respect and care."
+    }
+  ]
     }
   ]
 };

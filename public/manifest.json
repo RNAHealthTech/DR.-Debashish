@@ -1,0 +1,16 @@
+{
+  "name": "Dr. Debashish Chowdhury",
+  "short_name": "Dr. Chowdhury",
+  "description": "Consult Dr. Debashish Chowdhury, a leading headache specialist and neurologist.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0f1c",
+  "theme_color": "#0a0f1c",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

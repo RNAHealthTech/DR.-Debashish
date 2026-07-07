@@ -131,6 +131,7 @@ const ServiceDetailPage = () => {
                   <a 
                     href="https://www.blkmaxhospital.com/doctor/debashish-chowdhury" 
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center justify-between bg-white text-primary px-8 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-accent hover:text-white transition-all group"
                   >
                     <span>Book via BLK-Max</span>

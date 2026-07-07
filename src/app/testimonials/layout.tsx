@@ -8,7 +8,19 @@ export const metadata: Metadata = {
     "neurologist testimonials Delhi",
     "migraine doctor reviews Delhi",
     "best migraine doctor reviews"
-  ]
+  ],
+  alternates: {
+    canonical: "/testimonials",
+  },
+  openGraph: {
+    title: "Patient Testimonials & Reviews | Dr. Debashish Chowdhury",
+    description: "Read patient experiences and success stories from individuals treated by Dr. Debashish Chowdhury for chronic headache, migraine, stroke, and epilepsy in Delhi.",
+    url: "https://headachespecialistindia.com/testimonials",
+  },
+  twitter: {
+    title: "Patient Testimonials & Reviews | Dr. Debashish Chowdhury",
+    description: "Read patient experiences and success stories from individuals treated by Dr. Debashish Chowdhury for chronic headache, migraine, stroke, and epilepsy in Delhi.",
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

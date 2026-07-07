@@ -8,7 +8,19 @@ export const metadata: Metadata = {
     "refer neurology patient Delhi",
     "Dr. Debashish Chowdhury referrals",
     "medical collaboration neurology"
-  ]
+  ],
+  alternates: {
+    canonical: "/for-doctors",
+  },
+  openGraph: {
+    title: "For Doctors & Referrals | Neurologist Dr. Debashish Chowdhury",
+    description: "Collaborate and refer patients to Dr. Debashish Chowdhury for specialized care in complex headache, epilepsy, stroke intervention, and memory disorders.",
+    url: "https://headachespecialistindia.com/for-doctors",
+  },
+  twitter: {
+    title: "For Doctors & Referrals | Neurologist Dr. Debashish Chowdhury",
+    description: "Collaborate and refer patients to Dr. Debashish Chowdhury for specialized care in complex headache, epilepsy, stroke intervention, and memory disorders.",
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
