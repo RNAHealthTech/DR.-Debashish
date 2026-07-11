@@ -69,6 +69,14 @@ const MediaContent = () => {
 
   const videos = [
     {
+      title: "Dr. Debashish Chowdhury - Live Stream",
+      duration: "Live",
+      url: "https://www.youtube.com/watch?v=n84I5oY0MRg",
+      thumbnail: "https://img.youtube.com/vi/n84I5oY0MRg/hqdefault.jpg",
+      platform: "YouTube",
+      category: "TV/Media Public Awareness"
+    },
+    {
       title: "World Parkinson's Day: Disease Awareness & Prevention | ETV Bharat",
       duration: "09:08",
       url: "https://www.dailymotion.com/video/xa568o8",
