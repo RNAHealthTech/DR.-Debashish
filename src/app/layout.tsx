@@ -288,6 +288,7 @@ import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import ProgressBar from "@/components/ProgressBar";
 import FloatingWidgets from "@/components/FloatingWidgets";
+import SecurityCheck from "@/components/SecurityCheck";
 
 export default function RootLayout({
   children,
@@ -301,6 +302,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <SecurityCheck />
         <CustomCursor />
         <ProgressBar />
         <Navbar />

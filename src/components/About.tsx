@@ -7,13 +7,13 @@ import TiltCard from '@/components/TiltCard';
 
 const About = () => {
   const credentials = [
-    { title: 'MBBS', institution: 'Maulana Azad Medical College (MAMC)', year: '1985' },
-    { title: 'MD (Internal Medicine)', institution: 'MAMC, University of Delhi', year: '1993' },
-    { title: 'DM (Neurology)', institution: 'G.B. Pant Hospital, Delhi', year: '1993' },
-    { title: 'Diploma (Tuberculosis & Chest)', institution: 'Vallabhbhai Patel Chest Institute', year: '1990' },
     { title: 'Fellowship (Stroke Medicine)', institution: 'Edinburgh, UK', year: '2003' },
     { title: 'Training (Headache Disorders)', institution: 'Trinity College, Cambridge, UK', year: '2001' },
     { title: 'Training (GCP)', institution: 'Harvard Medical International', year: '2001' },
+    { title: 'DM (Neurology)', institution: 'G.B. Pant Hospital, Delhi', year: '1993' },
+    { title: 'MD (Internal Medicine)', institution: 'MAMC, University of Delhi', year: '1993' },
+    { title: 'Diploma (Tuberculosis & Chest)', institution: 'Vallabhbhai Patel Chest Institute', year: '1990' },
+    { title: 'MBBS', institution: 'Maulana Azad Medical College (MAMC)', year: '1985' },
   ];
 
   const awards = [
